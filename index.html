@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AQUA-GT | Inicio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'aqua': {
+              '50': '#f0f9ff',
+              '100': '#e0f2fe',
+              '200': '#bae6fd',
+              '300': '#7dd3fc',
+              '400': '#38bdf8',
+              '500': '#0ea5e9',
+              '600': '#0284c7',
+              '700': '#0369a1',
+              '800': '#075985',
+              '900': '#0c4a6e',
+            },
+            'deep-blue': {
+              '500': '#1e3a8a',
+              '600': '#1e40af',
+            }
+          },
+          fontFamily: {
+            'sans': ['"Inter"', 'sans-serif'],
+            'display': ['"Poppins"', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap');
+    
+    .wave-shape {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+    
+    .wave-shape svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 100px;
+    }
+    
+    .wave-shape .shape-fill {
+      fill: #FFFFFF;
+    }
+    
+    .category-card {
+      transition: all 0.3s ease;
+      perspective: 1000px;
+    }
+    
+    .category-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .category-card-inner {
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    
+    .category-card:hover .category-card-inner {
+      transform: rotateY(10deg);
+    }
+    
+    .gradient-text {
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      background-image: linear-gradient(45deg, #0ea5e9, #10b981);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800 antialiased">
+
+  <!-- NAVBAR MEJORADO -->
+  <nav class="bg-white fixed w-full top-0 z-50 shadow-sm border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo y nombre -->
+        <div class="flex items-center space-x-3">
+          <img src="img/Logo.jpg.png" alt="Logo AQUA-GT" class="w-14 h-14 object-contain rounded-full border-2 border-aqua-400" />
+          <div>
+            <h1 class="text-2xl font-bold bg-gradient-to-r from-aqua-600 to-green-500 gradient-text">AQUA-GT</h1>
+            <p class="text-xs text-gray-500 -mt-1">Acuarios & Vida Acuática</p>
+          </div>
+        </div>
+        
+        <!-- Menú principal -->
+        <div class="hidden md:flex items-center space-x-1">
+          <a href="index.html" class="px-4 py-2 text-sm font-medium rounded-lg bg-aqua-50 text-aqua-700 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+            </svg>
+            Inicio
+          </a>
+          
+          <a href="Peces.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-green-600 rounded-lg flex items-center hover:bg-green-50 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
+            </svg>
+            Peces
+          </a>
+      
+          <a href="Plantas.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-green-600 rounded-lg flex items-center hover:bg-green-50 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
+            </svg>
+            Plantas
+          </a>
+          
+          <a href="Accesorios.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-purple-600 rounded-lg flex items-center hover:bg-purple-50 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+            </svg>
+            Accesorios
+          </a>
+          
+          <a href="Promociones.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-red-600 rounded-lg flex items-center hover:bg-red-50 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z" clip-rule="evenodd" />
+              <path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z" />
+            </svg>
+            Promociones
+          </a>
+          
+
+          
+          <a href="Contacto.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 rounded-lg flex items-center hover:bg-indigo-50 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+            </svg>
+            Contacto
+          </a>
+        </div>
+        
+        <!-- Carrito y móvil -->
+        <div class="flex items-center space-x-4">
+          <button onclick="openCart()" class="relative p-2 text-gray-700 hover:text-aqua-600 rounded-full hover:bg-aqua-50 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
+            <span id="cart-count" class="absolute -top-1 -right-1 bg-aqua-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+          </button>
+          
+<button id="menu-toggle" class="md:hidden p-2 text-gray-700 hover:text-aqua-600 rounded-full hover:bg-aqua-50 transition focus:outline-none">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+  </svg>
+</button>
+        </div>
+      </div>
+    </div>
+<div id="mobile-menu" class="md:hidden hidden flex flex-col space-y-1 mt-2 px-4 pb-4">
+  <a href="index.html" class="px-4 py-2 text-sm font-medium rounded-lg bg-aqua-50 text-aqua-700 flex items-center">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+      <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+    </svg>
+    Inicio
+  </a>
+
+  <a href="Peces.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-green-600 rounded-lg flex items-center hover:bg-green-50 transition">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
+    </svg>
+    Peces
+  </a>
+
+  <a href="Plantas.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-green-600 rounded-lg flex items-center hover:bg-green-50 transition">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
+    </svg>
+    Plantas
+  </a>
+
+  <a href="Accesorios.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-purple-600 rounded-lg flex items-center hover:bg-purple-50 transition">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+    </svg>
+    Accesorios
+  </a>
+
+  <a href="Promociones.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-red-600 rounded-lg flex items-center hover:bg-red-50 transition">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z" clip-rule="evenodd" />
+      <path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z" />
+    </svg>
+    Promociones
+  </a>
+
+  <a href="Blog.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-yellow-600 rounded-lg flex items-center hover:bg-yellow-50 transition">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+      <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
+    </svg>
+    Blog
+  </a>
+
+  <a href="Contacto.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 rounded-lg flex items-center hover:bg-indigo-50 transition">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+    </svg>
+    Contacto
+  </a>
+</div>
+
+  </nav>
+
+  <!-- HERO SECTION MEJORADO -->
+  <section class="relative bg-gradient-to-br from-aqua-900 to-aqua-600 text-white pt-32 pb-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute inset-0 bg-[url('img/water-pattern.png')] bg-repeat opacity-30"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="md:flex items-center justify-between">
+        <div class="md:w-1/2 mb-12 md:mb-0">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight">
+            Descubre el <span class="gradient-text">mundo acuático</span> con nosotros
+          </h1>
+          <p class="text-lg sm:text-xl text-aqua-100 mb-8 max-w-lg">
+            Todo lo que necesitas para crear el acuario perfecto. Peces exóticos, plantas naturales y los mejores accesorios.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="Peces.html" class="px-6 py-3 bg-white text-aqua-700 font-semibold rounded-lg shadow-md hover:bg-gray-100 transition flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd" />
+              </svg>
+              Explorar Peces
+            </a>
+            <a href="Promociones.html" class="px-6 py-3 bg-aqua-700 hover:bg-aqua-800 text-white font-semibold rounded-lg shadow-md transition flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z" clip-rule="evenodd" />
+                <path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z" />
+              </svg>
+              Ver Promociones
+            </a>
+          </div>
+        </div>
+        
+        <div class="md:w-1/2 relative">
+          <div class="relative max-w-md mx-auto">
+            <div class="absolute -top-6 -left-6 w-32 h-32 bg-yellow-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+            <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-aqua-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div class="absolute top-0 -right-10 w-32 h-32 bg-green-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+            
+            <div class="relative bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
+              <img src="img/Logo.jpg.png" alt="Pez tropical" class="w-full h-auto object-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="wave-shape">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- CATEGORÍAS DESTACADAS -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="inline-block px-3 py-1 text-sm font-semibold text-aqua-700 bg-aqua-100 rounded-full mb-4">Explora</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 font-display mb-4">Nuestras Categorías</h2>
+        <p class="max-w-2xl mx-auto text-lg text-gray-600">Descubre nuestra amplia selección de productos para acuarios</p>
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Peces -->
+        <a href="Peces.html" class="category-card group">
+          <div class="category-card-inner h-full bg-gradient-to-br from-blue-50 to-aqua-50 rounded-2xl overflow-hidden shadow-md border border-gray-100 hover:shadow-lg">
+            <div class="relative h-48 overflow-hidden">
+              <img src="img/LogoPrincipal-escalares.webp" alt="Peces tropicales" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent"></div>
+              <div class="absolute bottom-0 left-0 p-6">
+                <h3 class="text-2xl font-bold text-white font-display">Peces</h3>
+                <p class="text-blue-100">+50 especies</p>
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-600 mb-4">Descubre nuestra variedad de peces tropicales, de agua fría y marinos para tu acuario.</p>
+              <div class="flex items-center text-aqua-600 font-medium">
+                Ver colección
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 transition-transform group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </a>
+        
+        <!-- Plantas -->
+        <a href="Plantas.html" class="category-card group">
+          <div class="category-card-inner h-full bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl overflow-hidden shadow-md border border-gray-100 hover:shadow-lg">
+            <div class="relative h-48 overflow-hidden">
+              <img src="img/fondo-acuario.png" alt="Plantas acuáticas" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-green-900/70 to-transparent"></div>
+              <div class="absolute bottom-0 left-0 p-6">
+                <h3 class="text-2xl font-bold text-white font-display">Plantas</h3>
+                <p class="text-green-100">+30 variedades</p>
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-600 mb-4">Plantas naturales para decorar y oxigenar tu acuario. De diferentes tamaños y colores.</p>
+              <div class="flex items-center text-green-600 font-medium">
+                Ver colección
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 transition-transform group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </a>
+        
+        <!-- Accesorios -->
+        <a href="Accesorios.html" class="category-card group">
+          <div class="category-card-inner h-full bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl overflow-hidden shadow-md border border-gray-100 hover:shadow-lg">
+            <div class="relative h-48 overflow-hidden">
+              <img src="img/accesorios-principal.jpg" alt="Accesorios para acuario" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-purple-900/70 to-transparent"></div>
+              <div class="absolute bottom-0 left-0 p-6">
+                <h3 class="text-2xl font-bold text-white font-display">Accesorios</h3>
+                <p class="text-purple-100">Todo lo necesario</p>
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-600 mb-4">Filtros, iluminación, decoración y todo lo que necesitas para mantener tu acuario perfecto.</p>
+              <div class="flex items-center text-purple-600 font-medium">
+                Ver colección
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 transition-transform group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+<!-- PRODUCTOS DESTACADOS -->
+<section class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span class="inline-block px-3 py-1 text-sm font-semibold text-green-700 bg-green-100 rounded-full mb-4">Novedades</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 font-display mb-4">Productos Destacados</h2>
+      <p class="max-w-2xl mx-auto text-lg text-gray-600">Los favoritos de nuestros clientes</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <!-- Producto 1 -->
+      <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full group">
+        <div class="relative pt-[100%] bg-gray-100 overflow-hidden">
+          <img src="img/splenda-removebg-preview.png" alt="Pez Betta Splendens"
+               class="absolute top-0 left-0 w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-4 right-4 bg-aqua-600 text-white text-xs font-bold px-2 py-1 rounded-full">NUEVO</span>
+        </div>
+        <div class="p-5 flex flex-col justify-between flex-grow">
+          <div>
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-lg font-bold text-gray-900">Pez Betta Splendens</h3>
+              <span class="text-aqua-600 font-bold">Q25.00</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-4">Colorido pez ideal para acuarios pequeños</p>
+          </div>
+          <div class="flex space-x-3 mt-auto">
+            <button onclick="mostrarDetalle('pez001')"
+                    class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-3 rounded-lg flex items-center justify-center gap-2 transition-colors text-sm">
+              Detalles
+            </button>
+            <button onclick="addToCartManual('pez001', 'Pez Betta Splendens', 25.00, 'img/splenda-removebg-preview.png')"
+                    class="flex-1 bg-aqua-600 hover:bg-aqua-700 text-white py-2 px-3 rounded-lg flex items-center justify-center gap-2 transition-colors text-sm">
+              Añadir
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full group">
+        <div class="relative pt-[100%] bg-gray-100 overflow-hidden">
+          <img src="img/pez-guppy.png.png" alt="Pez Guppy"
+               class="absolute top-0 left-0 w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-4 right-4 bg-aqua-600 text-white text-xs font-bold px-2 py-1 rounded-full">POPULAR</span>
+        </div>
+        <div class="p-5 flex flex-col justify-between flex-grow">
+          <div>
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-lg font-bold text-gray-900">Guppy Mixtos</h3>
+              <span class="text-aqua-600 font-bold">Q10.00 (3 unidades)</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-4">Ideal para acuarios comunitarios</p>
+          </div>
+          <div class="flex space-x-3 mt-auto">
+            <button onclick="mostrarDetalle('pez002')"
+                    class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-3 rounded-lg flex items-center justify-center gap-2 transition-colors text-sm">
+              Detalles
+            </button>
+            <button onclick="addToCartManual('pez002', 'Pez Guppy', 10.00, 'img/gupi-removebg-preview.png')"
+                    class="flex-1 bg-aqua-600 hover:bg-aqua-700 text-white py-2 px-3 rounded-lg flex items-center justify-center gap-2 transition-colors text-sm">
+              Añadir
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full group">
+        <div class="relative pt-[100%] bg-gray-100 overflow-hidden">
+          <img src="img/El-pez-neOn-1200x900-removebg-preview (1).png" alt="Pez Molly"
+               class="absolute top-0 left-0 w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-4 right-4 bg-aqua-600 text-white text-xs font-bold px-2 py-1 rounded-full">OFERTA</span>
+        </div>
+        <div class="p-5 flex flex-col justify-between flex-grow">
+          <div>
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-lg font-bold text-gray-900">Neon Tetra</h3>
+              <span class="text-aqua-600 font-bold">Q18.00</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-4">Resistente y sociable, ideal para principiantes</p>
+          </div>
+          <div class="flex space-x-3 mt-auto">
+            <button onclick="mostrarDetalle('pez003')"
+                    class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-3 rounded-lg flex items-center justify-center gap-2 transition-colors text-sm">
+              Detalles
+            </button>
+            <button onclick="addToCartManual('pez003', 'Pez Molly', 15.00, 'img/molly-removebg-preview.png')"
+                    class="flex-1 bg-aqua-600 hover:bg-aqua-700 text-white py-2 px-3 rounded-lg flex items-center justify-center gap-2 transition-colors text-sm">
+              Añadir
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Producto 2 -->
+      <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full group">
+        <div class="relative pt-[100%] bg-gray-100 overflow-hidden">
+          <img src="img/moro-removebg-preview (1).png" alt="Moro Telescopio"
+               class="absolute top-0 left-0 w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-500">
+          <span class="absolute top-4 right-4 bg-aqua-600 text-white text-xs font-bold px-2 py-1 rounded-full">POPULAR</span>
+        </div>
+        <div class="p-5 flex flex-col justify-between flex-grow">
+          <div>
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-lg font-bold text-gray-900">Moro Telescopio</h3>
+              <span class="text-aqua-600 font-bold">Q10.00 </span>
+            </div>
+            <p class="text-gray-500 text-sm mb-4">Ideal para acuarios comunitarios</p>
+          </div>
+          <div class="flex space-x-3 mt-auto">
+            <button onclick="mostrarDetalle('pez020')"
+                    class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-3 rounded-lg flex items-center justify-center gap-2 transition-colors text-sm">
+              Detalles
+            </button>
+            <button onclick="addToCartManual('pez020', 'Moro Telescopio', 10.00, 'img/gupi-removebg-preview.png')"
+                    class="flex-1 bg-aqua-600 hover:bg-aqua-700 text-white py-2 px-3 rounded-lg flex items-center justify-center gap-2 transition-colors text-sm">
+              Añadir
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="Peces.html"
+         class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-aqua-600 hover:bg-aqua-700 transition-colors">
+        Ver todos los productos
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd"
+                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                clip-rule="evenodd"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- PROMOCIONES -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- CONTACTO -->
+
+          
+<section class="py-16 bg-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white rounded-2xl shadow-xl overflow-hidden md:flex">
+      
+      <!-- Columna izquierda: Información -->
+      <div class="md:w-1/2 bg-gradient-to-br from-cyan-600 to-blue-700 text-white p-8 md:p-12">
+        <h2 class="text-3xl font-bold font-display mb-6">¿Necesitas ayuda con tu acuario?</h2>
+        <p class="text-cyan-100 mb-8">Nuestro equipo de expertos está listo para asesorarte en todo lo relacionado con acuarios y vida acuática.</p>
+
+        <div class="space-y-6">
+          <!-- Teléfono -->
+          <div class="flex items-start">
+            <div class="flex-shrink-0 bg-cyan-500/20 p-3 rounded-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-cyan-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+            </div>
+            <div class="ml-4">
+              <h3 class="text-lg font-medium">Teléfono</h3>
+              <p class="text-cyan-200">+502 1234 5678</p>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="flex items-start">
+            <div class="flex-shrink-0 bg-cyan-500/20 p-3 rounded-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-cyan-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div class="ml-4">
+              <h3 class="text-lg font-medium">Email</h3>
+              <p class="text-cyan-200">info@aqua-gt.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna derecha: Contacto rápido -->
+      <div class="md:w-1/2 bg-gradient-to-br from-blue-100 to-cyan-100 flex flex-col justify-center p-8 md:p-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4 text-center">Contáctanos rápido</h2>
+        <p class="text-gray-600 mb-8 text-center">Elige el canal que prefieras, ¡te responderemos de inmediato!</p>
+
+        <div class="grid grid-cols-2 gap-4">
+          <!-- WhatsApp -->
+          <a href="https://wa.me/50242285137" target="_blank"
+             class="flex flex-col items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-4 px-4 rounded-xl shadow-md ring-2 ring-white hover:ring-green-300 transition-all duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 mb-1" viewBox="0 0 448 512" fill="currentColor">
+              <path d="M380.9 97.1C339-13.3 222.1-33.3 132.7 8.6S-33.3 222.1 8.6 311.5l-24.9 92.5c-3.5 13.1 8.4 24.8 21.3 21.3l92.5-24.9c89.4 42 194.1-15.3 236-106.6s15.3-194.1-53.6-252.7zM224 390.6c-36.1 0-69.6-10.5-98.2-28.6l-5.9-3.6-54.9 14.8 14.8-54.9-3.6-5.9c-18.2-28.6-28.6-62.1-28.6-98.2 0-97.2 78.8-176 176-176s176 78.8 176 176-78.8 176-176 176zm98.8-132.6l-30.2-8.6c-3.9-1.1-8.1-.1-11 2.6l-13.5 13.2c-3.1 3-7.9 3.8-11.8 2-14.4-6.7-63.6-55.6-70.4-70-1.9-3.9-1.1-8.7 2-11.8l13.2-13.5c2.7-2.9 3.7-7.1 2.6-11l-8.6-30.2c-1.6-5.5-7.2-8.8-12.8-7.5-16.1 3.8-34.3 16.8-34.3 46.1 0 46.7 53.1 99.8 99.8 99.8 29.3 0 42.3-18.2 46.1-34.3 1.3-5.6-2-11.2-7.5-12.8z"/>
+            </svg>
+            <span class="text-sm">WhatsApp</span>
+          </a>
+
+          <!-- Messenger -->
+          <a href="https://m.me/tuusuario" target="_blank"
+             class="flex flex-col items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-4 rounded-xl shadow-md ring-2 ring-white hover:ring-blue-300 transition-all duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 mb-1" viewBox="0 0 512 512" fill="currentColor">
+              <path d="M256 32C114.6 32 0 132.3 0 256c0 68.4 32.3 129.9 84.1 171.5V512l77.4-42.5c28.4 9 59 14 90.5 14 141.4 0 256-100.3 256-224S397.4 32 256 32zm51.1 228.5l-70.1 74.8-56.7-74.8-94.3 74.8 137.5-146.7 57.6 76.5 94.3-76.5-68.3 146.7z"/>
+            </svg>
+            <span class="text-sm">Messenger</span>
+          </a>
+
+          <!-- Llamar -->
+          <a href="tel:+50242285137"
+             class="flex flex-col items-center justify-center bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-4 px-4 rounded-xl shadow-md ring-2 ring-white hover:ring-yellow-300 transition-all duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 mb-1" viewBox="0 0 512 512" fill="currentColor">
+              <path d="M493.4 24.6l-104-24c-11.3-2.6-22.7 3.4-27.3 14.1l-48 112c-4.2 9.8-1.4 21.2 6.9 28l60 48c-36.7 76.2-99.7 139.2-175.9 175.9l-48-60c-6.8-8.3-18.2-11.1-28-6.9l-112 48c-10.6 4.6-16.6 16-14 27.3l24 104c2.5 10.9 12.1 18.7 23.3 18.7C441.6 512 512 441.6 512 347.3c0-11.3-7.8-20.8-18.6-23.3z"/>
+            </svg>
+            <span class="text-sm">Llamar</span>
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://instagram.com/tuusuario" target="_blank"
+             class="flex flex-col items-center justify-center bg-pink-500 hover:bg-pink-600 text-white font-semibold py-4 px-4 rounded-xl shadow-md ring-2 ring-white hover:ring-pink-300 transition-all duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 mb-1" viewBox="0 0 448 512" fill="currentColor">
+              <path d="M224 202.66A53.34 53.34 0 1 0 277.34 256 53.38 53.38 0 0 0 224 202.66ZM398.8 64H49.2C21.9 64 0 85.9 0 113.2V398.8C0 426.1 21.9 448 49.2 448H398.8C426.1 448 448 426.1 448 398.8V113.2C448 85.9 426.1 64 398.8 64zM224 338.7A82.7 82.7 0 1 1 306.7 256 82.77 82.77 0 0 1 224 338.7zm85.4-148.2a19.3 19.3 0 1 1 19.3-19.3 19.3 19.3 0 0 1-19.3 19.3z"/>
+            </svg>
+            <span class="text-sm">Instagram</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- FOOTER MEJORADO -->
+  <footer class="bg-gray-900 text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div>
+          <div class="flex items-center space-x-3 mb-4">
+            <img src="img/Logo.jpg.png" alt="Logo AQUA-GT" class="w-12 h-12 object-contain rounded-full border-2 border-aqua-400" />
+            <h3 class="text-xl font-bold bg-gradient-to-r from-aqua-400 to-green-400 gradient-text">AQUA-GT</h3>
+          </div>
+          <p class="text-gray-400 text-sm">Tu tienda especializada en acuarios y vida acuática en Guatemala.</p>
+          <div class="flex space-x-4 mt-6">
+            <a href="#" class="text-gray-400 hover:text-aqua-400 transition-colors">
+              <span class="sr-only">Facebook</span>
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-aqua-400 transition-colors">
+              <span class="sr-only">Instagram</span>
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-aqua-400 transition-colors">
+              <span class="sr-only">WhatsApp</span>
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase mb-4">Productos</h3>
+          <ul class="space-y-3">
+            <li><a href="Peces.html" class="text-gray-400 hover:text-white transition-colors">Peces</a></li>
+            <li><a href="plantas.html" class="text-gray-400 hover:text-white transition-colors">Plantas</a></li>
+            <li><a href="Accesorios.html" class="text-gray-400 hover:text-white transition-colors">Accesorios</a></li>
+            <li><a href="Promociones.html" class="text-gray-400 hover:text-white transition-colors">Promociones</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase mb-4">Información</h3>
+          <ul class="space-y-3">
+            <li><a href="Blog.html" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Guías de cuidado</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Preguntas frecuentes</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Términos y condiciones</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase mb-4">Contacto</h3>
+          <ul class="space-y-3">
+            <li><a href="Contacto.html" class="text-gray-400 hover:text-white transition-colors">Contáctanos</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Soporte técnico</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Visita nuestra tienda</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Trabaja con nosotros</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-sm">&copy; 2025 AQUA-GT. Todos los derechos reservados.</p>
+        <div class="mt-4 md:mt-0">
+          <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Política de privacidad</a>
+          <span class="mx-2 text-gray-600">•</span>
+          <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Términos de servicio</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL INFO -->
+  <div id="info-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50 p-4">
+    <div class="bg-white p-6 rounded-l-lg w-full max-w-[700px] sm:max-w-[500px] max-h-full overflow-auto">
+      <button onclick="closeInfoModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+      <div class="md:flex gap-6">
+        <div class="md:w-1/2 mb-4 md:mb-0">
+          <img id="info-image" src="" alt="" class="w-full h-auto max-h-96 object-contain rounded-lg shadow-md" />
+        </div>
+        <div class="md:w-1/2">
+          <h3 id="info-title" class="text-3xl font-bold mb-4 text-aqua-700"></h3>
+          <p id="info-description" class="text-gray-700 mb-4"></p>
+          <div class="flex items-center justify-between">
+            <span id="info-price" class="text-2xl font-bold text-aqua-600"></span>
+            <button id="info-add-to-cart" class="bg-aqua-600 hover:bg-aqua-700 text-white px-6 py-2 rounded-lg transition">
+              Añadir al carrito
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL CARRITO -->
+  <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-70 hidden z-50 flex items-center justify-center sm:justify-end">
+
+    <div class="bg-white w-full max-w-full sm:max-w-md md:max-w-lg lg:max-w-xl p-4 sm:p-6 rounded-l-lg max-h-full overflow-auto">
+
+
+      <h3 class="text-2xl font-semibold mb-6">Carrito de Compras</h3>
+      <div class="overflow-x-auto">
+       <table class="w-full table-auto mb-6 text-gray-700">
+        <thead class="border-b border-gray-300">
+          <tr>
+            <th class="text-left px-2 py-2 min-w-[140px]">Producto</th>
+            <th class="text-center px-2 py-2 w-24">Precio c/u</th>
+            <th class="text-center px-2 py-2 w-40">Cantidad</th>
+            <th class="text-right px-2 py-2 w-32">Total</th>
+            <th class="px-2 py-2 w-10">Eliminar</th>
+          </tr>
+        </thead>
+        <tbody id="cart-items">
+          <!-- Productos se agregan aquí -->
+        </tbody>
+      </table>
+      </div>
+      <div class="border-t border-gray-300 pt-4 mb-6">
+        <div class="flex justify-between text-lg font-semibold">
+          <span>Total:</span>
+          <span id="cart-total">Q0.00</span>
+        </div>
+      </div>
+      <th class="px-2 py-2 w-10">Nota: El stock de peces vivos varía constantemente. Recibirás confirmación de disponibilidad vía WhatsApp o correo electrónico antes de procesar tu pago o entrega.</th>
+      <div class="mb-6">
+        <label for="clienteNombre" class="block font-semibold mb-2">Tu Nombre:</label>
+        <input type="text" id="clienteNombre" class="w-full border border-gray-300 rounded px-4 py-2 text-lg" placeholder="Escribe tu nombre" />
+      </div>
+      <div class="space-y-3 mb-4">
+        <button onclick="finalizarPedido()" class="bg-aqua-600 hover:bg-aqua-700 text-white w-full py-4 rounded-lg transition-all duration-200 hover:scale-[1.02] shadow-lg hover:shadow-xl font-bold text-lg flex items-center justify-center gap-3">
+          <span class="text-2xl">✅</span> 
+          <span>FINALIZAR COMPRA</span>
+        </button>
+        <div class="grid grid-cols-2 gap-3">
+          <button onclick="vaciarCarrito()" class="bg-gray-500 hover:bg-gray-600 text-white py-3 rounded transition-all duration-200 hover:scale-[1.02] shadow-md hover:shadow-lg font-semibold flex items-center justify-center gap-2">
+            <span class="text-xl">🗑️</span> Vaciar
+          </button>
+          <button onclick="closeCart()" class="bg-red-500 hover:bg-red-600 text-white py-3 rounded transition-all duration-200 hover:scale-[1.02] shadow-md hover:shadow-lg font-semibold flex items-center justify-center gap-2">
+            <span class="text-xl">❌</span> Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTIFICACIÓN FLOTANTE -->
+  <div id="notificacion-carrito" class="fixed bottom-4 right-4 bg-aqua-600 text-white px-4 py-2 rounded-lg shadow-lg z-50 hidden"></div>
+
+  <script>
+    // Datos de productos (los mismos que en peces.html para mantener consistencia)
+    const productosPeces = [
+      {
+        id: 'pez001',
+        nombre: 'Pez Betta Splendens',
+        precio: 25.00,
+        imagen: 'img/splenda-removebg-preview.png',
+        categoria: 'betta',
+        descripcion: 'El pez Betta es conocido por sus colores vibrantes y aletas largas y fluidas. Ideal para acuarios pequeños (mínimo 5 litros). Son peces territoriales, por lo que se recomienda mantener solo un macho por acuario. Alimentación: escamas especiales para Bettas o alimento vivo.'
+      },
+      {
+        id: 'pez002',
+        nombre: 'Guppy Mixto 3 unidades',
+        precio: 10.00,
+        imagen: 'img/pez-guppy-acuarioland-removebg-preview (1).png',
+        categoria: 'tropicales',
+        descripcion: 'Peces pequeños y coloridos, perfectos para acuarios comunitarios. Los Guppies Endler son una variedad más pequeña que los Guppies comunes, con colores metálicos brillantes. Son muy activos y se reproducen fácilmente. Requieren agua entre 24-28°C y pH neutro a alcalino.'
+      },
+      {
+        id: 'pez003',
+        nombre: 'Neón Tetra',
+        precio: 18.00,
+        imagen: 'img/El-pez-neOn-1200x900-removebg-preview (1).png',
+        categoria: 'tetra',
+        descripcion: 'Peces de cardumen con una franja azul neón que los hace brillar bajo la luz del acuario. Deben mantenerse en grupos de al menos 6 ejemplares. Prefieren acuarios plantados con agua blanda y ligeramente ácida. Temperatura ideal: 22-26°C. Alimentación: omnívoros (aceptan escamas, gránulos y alimento congelado).'
+      },
+    
+                        {
+        id: 'pez020',
+        nombre: 'Moro Telescopio',
+        precio: 10.00,
+        imagen: 'img/moro-removebg-preview (1).png',
+        categoria: 'goldfish',
+        descripcion: 'Variedad del goldfish caracterizada por sus ojos grandes y protuberantes. Es un pez de agua fría, tranquilo y de lento movimiento, ideal para acuarios y estanques. Requiere agua limpia, con temperatura entre 18-24°C y pH neutro a ligeramente alcalino. Necesita cuidados especiales debido a sus ojos delicados.'
+      },,
+      {
+        id: 'pez005',
+        nombre: 'Goldfish Cometa',
+        precio: 75.00,
+        imagen: 'img/goldfish.jpg',
+        categoria: 'goldfish',
+        descripcion: 'Variedad clásica de Goldfish con cola larga y fluida. Requieren acuarios espaciosos (mínimo 40 litros por pez) con buena filtración. Temperatura ideal: 18-22°C. Son omnívoros y muy activos. No compatibles con peces tropicales que requieren agua más cálida.'
+      },
+      {
+        id: 'pez006',
+        nombre: 'Ángel Escalar',
+        precio: 120.00,
+        imagen: 'img/escalar.jpg',
+        categoria: 'escalar',
+        descripcion: 'Peces elegantes con forma de triángulo y aletas alargadas. Prefieren acuarios altos (mínimo 120 litros) con plantas altas. Temperatura: 26-30°C. Pueden ser territoriales, especialmente durante la reproducción. Alimentación: alimento en escamas, gránulos y alimento vivo o congelado.'
+      },
+      {
+        id: 'pez007',
+        nombre: 'Disco Azul',
+        precio: 250.00,
+        imagen: 'img/disco.jpg',
+        categoria: 'disco',
+        descripcion: 'Considerados los reyes del acuario por su belleza y elegancia. Requieren acuarios grandes (mínimo 200 litros para un grupo pequeño) con agua muy limpia. Temperatura: 28-30°C. pH ligeramente ácido. Alimentación especializada rica en proteínas. Solo para acuaristas experimentados.'
+      },
+      {
+        id: 'pez008',
+        nombre: 'Molly Negro',
+        precio: 40.00,
+        imagen: 'img/molly.jpg',
+        categoria: 'otros',
+        descripcion: 'Peces resistentes y fáciles de mantener, ideales para principiantes. Prefieren agua ligeramente alcalina con algo de sal (1 cucharada por cada 10 litros). Temperatura: 24-28°C. Son vivíparos y se reproducen fácilmente. Alimentación: omnívoros, aceptan vegetales y alimento en escamas.'
+      },
+      {
+        id: 'pez009',
+        nombre: 'Betta Crown Tail',
+        precio: 95.00,
+        imagen: 'img/betta-crown.jpg',
+        categoria: 'betta',
+        descripcion: 'Variedad de Betta con aletas en forma de corona. Colores intensos y personalidad marcada. Requieren acuarios pequeños (5-10 litros) con temperatura estable (24-28°C). No compatible con otros Bettas. Alimentación especializada en pequeñas cantidades 2-3 veces al día.'
+      },
+      {
+        id: 'pez010',
+        nombre: 'Tetra Cardenal',
+        precio: 38.00,
+        imagen: 'img/tetra-cardinal.jpg',
+        categoria: 'tetra',
+        descripcion: 'Similar al Neón Tetra pero con coloración roja más extendida. Deben mantenerse en grupos de al menos 8-10 ejemplares. Prefieren acuarios plantados con iluminación tenue. Temperatura: 23-27°C. Alimentación variada que incluya alimento vivo o congelado ocasionalmente.'
+      }
+    ];
+
+    // Mostrar detalles del producto en modal
+    function mostrarDetalle(productoId) {
+      const producto = productosPeces.find(p => p.id === productoId);
+      if (!producto) return;
+
+      document.getElementById('info-title').textContent = producto.nombre;
+      document.getElementById('info-image').src = producto.imagen;
+      document.getElementById('info-image').alt = producto.nombre;
+      document.getElementById('info-description').textContent = producto.descripcion;
+      document.getElementById('info-price').textContent = `Q${producto.precio.toFixed(2)}`;
+      
+      // Configurar botón de añadir al carrito
+      const addButton = document.getElementById('info-add-to-cart');
+      addButton.onclick = function() {
+        addToCart(producto);
+        closeInfoModal();
+      };
+      
+      document.getElementById('info-modal').classList.remove('hidden');
+    }
+
+    function closeInfoModal() {
+      document.getElementById('info-modal').classList.add('hidden');
+    }
+
+    // Función para añadir al carrito manualmente (para los botones directos)
+    function addToCartManual(id, nombre, precio, imagen) {
+      const producto = {
+        id,
+        nombre,
+        precio,
+        imagen,
+        cantidad: 1
+      };
+      addToCart(producto);
+    }
+
+    // Inicialización al cargar la página
+    document.addEventListener('DOMContentLoaded', () => {
+      actualizarContadorCarrito();
+      
+      // Asegurarnos de que el carrito exista en localStorage
+      if (!localStorage.getItem('carrito')) {
+        localStorage.setItem('carrito', JSON.stringify([]));
+      }
+    });
+
+    // Función para actualizar el contador del carrito
+    function actualizarContadorCarrito() {
+      const carrito = obtenerCarrito();
+      const totalItems = carrito.reduce((total, item) => total + item.cantidad, 0);
+      document.getElementById('cart-count').textContent = totalItems;
+    }
+
+    // Obtener carrito desde localStorage
+    function obtenerCarrito() {
+      return JSON.parse(localStorage.getItem('carrito')) || [];
+    }
+
+    // Guardar carrito en localStorage
+    function guardarCarrito(carrito) {
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      actualizarContadorCarrito();
+    }
+
+    // Añadir producto al carrito
+    function addToCart(producto) {
+      let carrito = obtenerCarrito();
+      const itemExistente = carrito.find(item => item.id === producto.id);
+      
+      if (itemExistente) {
+        itemExistente.cantidad += 1;
+      } else {
+        carrito.push({ 
+          id: producto.id,
+          nombre: producto.nombre,
+          precio: producto.precio,
+          imagen: producto.imagen,
+          cantidad: 1
+        });
+      }
+      
+      guardarCarrito(carrito);
+      mostrarNotificacion(`${producto.nombre} añadido al carrito`);
+    }
+
+    // Mostrar notificación
+    function mostrarNotificacion(mensaje) {
+      const notificacion = document.getElementById('notificacion-carrito');
+      notificacion.textContent = mensaje;
+      notificacion.classList.remove('hidden');
+      
+      setTimeout(() => {
+        notificacion.classList.add('hidden');
+      }, 3000);
+    }
+
+    // Abrir carrito y mostrar items
+    function openCart() {
+      const carrito = obtenerCarrito();
+      const cartItems = document.getElementById('cart-items');
+      const cartTotal = document.getElementById('cart-total');
+      
+      cartItems.innerHTML = '';
+      
+      if (carrito.length === 0) {
+        cartItems.innerHTML = `
+          <tr>
+            <td colspan="5" class="text-center py-4 text-gray-500">Tu carrito está vacío</td>
+          </tr>
+        `;
+      } else {
+        carrito.forEach(item => {
+          const row = document.createElement('tr');
+          row.className = 'border-b border-gray-200';
+          row.innerHTML = `
+            <td class="px-2 py-3">
+              <div class="flex items-center">
+                <img src="${item.imagen}" alt="${item.nombre}" class="w-10 h-10 object-contain mr-3">
+                <span>${item.nombre}</span>
+              </div>
+            </td>
+            <td class="px-2 py-3 text-center">Q${item.precio.toFixed(2)}</td>
+            <td class="px-2 py-3 text-center">
+              <div class="flex items-center justify-center">
+                <button onclick="updateCartItem('${item.id}', ${item.cantidad - 1})" class="bg-gray-200 px-2 rounded-l hover:bg-gray-300">-</button>
+                <span class="px-3">${item.cantidad}</span>
+                <button onclick="updateCartItem('${item.id}', ${item.cantidad + 1})" class="bg-gray-200 px-2 rounded-r hover:bg-gray-300">+</button>
+              </div>
+            </td>
+            <td class="px-2 py-3 text-right">Q${(item.precio * item.cantidad).toFixed(2)}</td>
+            <td class="px-2 py-3 text-center">
+              <button onclick="removeFromCart('${item.id}')" class="text-red-500 hover:text-red-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                </svg>
+              </button>
+            </td>
+          `;
+          cartItems.appendChild(row);
+        });
+      }
+      
+      // Calcular total
+      const total = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
+      cartTotal.textContent = `Q${total.toFixed(2)}`;
+      
+      // Mostrar modal
+      document.getElementById('cart-modal').classList.remove('hidden');
+    }
+
+    function closeCart() {
+      document.getElementById('cart-modal').classList.add('hidden');
+    }
+
+    // Actualizar cantidad de un item
+    function updateCartItem(productId, newQuantity) {
+      if (newQuantity < 1) {
+        removeFromCart(productId);
+        return;
+      }
+      
+      let carrito = obtenerCarrito();
+      const item = carrito.find(item => item.id === productId);
+      
+      if (item) {
+        item.cantidad = newQuantity;
+        guardarCarrito(carrito);
+        openCart(); // Refrescar vista
+      }
+    }
+
+    // Eliminar item del carrito
+    function removeFromCart(productId) {
+      let carrito = obtenerCarrito();
+      carrito = carrito.filter(item => item.id !== productId);
+      guardarCarrito(carrito);
+      openCart(); // Refrescar vista
+      mostrarNotificacion('Producto eliminado del carrito');
+    }
+
+    // Vaciar carrito completamente
+    function vaciarCarrito() {
+      guardarCarrito([]);
+      document.getElementById('cart-items').innerHTML = `
+        <tr>
+          <td colspan="5" class="text-center py-4 text-gray-500">Tu carrito está vacío</td>
+        </tr>
+      `;
+      document.getElementById('cart-total').textContent = 'Q0.00';
+      mostrarNotificacion('Carrito vaciado');
+    }
+
+    // Finalizar compra
+    function finalizarPedido() {
+      const nombre = document.getElementById('clienteNombre').value.trim();
+      const carrito = obtenerCarrito();
+      
+      if (carrito.length === 0) {
+        mostrarNotificacion('El carrito está vacío');
+        return;
+      }
+      
+      if (!nombre) {
+        mostrarNotificacion('Por favor ingresa tu nombre');
+        return;
+      }
+      
+      const total = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
+      
+      // Aquí normalmente enviarías los datos a un servidor
+      console.log('Pedido realizado:', {
+        cliente: nombre,
+        productos: carrito,
+        total: total
+      });
+      
+      
+      mostrarNotificacion(`¡Pedido realizado, ${nombre}! Total: Q${total.toFixed(2)}`);
+      
+      // Vaciar carrito después de finalizar
+      vaciarCarrito();
+      closeCart();
+      
+      // Limpiar campo de nombre
+      document.getElementById('clienteNombre').value = '';
+    }
+
+    // Hacer funciones accesibles desde HTML
+    window.addToCartManual = addToCartManual;
+    window.mostrarDetalle = mostrarDetalle;
+    window.closeInfoModal = closeInfoModal;
+    window.openCart = openCart;
+    window.closeCart = closeCart;
+    window.updateCartItem = updateCartItem;
+    window.removeFromCart = removeFromCart;
+    window.vaciarCarrito = vaciarCarrito;
+    window.finalizarPedido = finalizarPedido;
+
+   
+
+
+   const toggleButton = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  toggleButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+
+  </script>
+   <!-- CARRITO.JS (Real) -->
+  <script src="carrito.js"></script>
+
+  
+  
+</body>
+</html>

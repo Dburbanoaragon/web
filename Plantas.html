@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AQUA-GT | Inicio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'aqua': {
+              '50': '#f0f9ff',
+              '100': '#e0f2fe',
+              '200': '#bae6fd',
+              '300': '#7dd3fc',
+              '400': '#38bdf8',
+              '500': '#0ea5e9',
+              '600': '#0284c7',
+              '700': '#0369a1',
+              '800': '#075985',
+              '900': '#0c4a6e',
+            },
+            'deep-blue': {
+              '500': '#1e3a8a',
+              '600': '#1e40af',
+            }
+          },
+          fontFamily: {
+            'sans': ['"Inter"', 'sans-serif'],
+            'display': ['"Poppins"', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap');
+    
+    .wave-shape {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+    
+    .wave-shape svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 100px;
+    }
+    
+    .wave-shape .shape-fill {
+      fill: #FFFFFF;
+    }
+    
+    .gradient-text {
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      background-image: linear-gradient(45deg, #0ea5e9, #10b981);
+    }
+
+    /* Estilos para tarjetas grandes */
+    .product-card {
+      transition: all 0.3s ease;
+      perspective: 1000px;
+      border-radius: 16px;
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .product-image-container {
+      position: relative;
+      padding-bottom: 80%;
+      overflow: hidden;
+    }
+    
+    .product-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .product-card:hover .product-image {
+      transform: scale(1.05);
+    }
+    
+    .product-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .product-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: #1f2937;
+    }
+    
+    .product-price {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #059669;
+      margin-bottom: 1.5rem;
+    }
+    
+    .product-actions {
+      margin-top: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    
+    .action-button {
+      padding: 0.75rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+    }
+    
+    .info-button {
+      background-color: #dbeafe;
+      color: #1e40af;
+    }
+    
+    .info-button:hover {
+      background-color: #bfdbfe;
+    }
+    
+    .add-button {
+      background-color: #059669;
+      color: white;
+    }
+    
+    .add-button:hover {
+      background-color: #047857;
+    }
+    
+    /* Ajustar el grid para tarjetas más grandes */
+    @media (min-width: 640px) {
+      #product-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 768px) {
+      #product-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      #product-list {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    @media (min-width: 1280px) {
+      #product-list {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800 antialiased">
+
+  <!-- NAVBAR -->
+  <nav class="bg-white fixed w-full top-0 z-50 shadow-sm border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo y nombre -->
+        <div class="flex items-center space-x-3">
+          <img src="img/Logo.jpg.png" alt="Logo AQUA-GT" class="w-14 h-14 object-contain rounded-full border-2 border-aqua-400" />
+          <div>
+            <h1 class="text-2xl font-bold bg-gradient-to-r from-aqua-600 to-green-500 gradient-text">AQUA-GT</h1>
+            <p class="text-xs text-gray-500 -mt-1">Acuarios & Vida Acuática</p>
+          </div>
+        </div>
+        
+        <!-- Menú principal -->
+        <div class="hidden md:flex items-center space-x-1">
+          <a href="index.html" class="px-4 py-2 text-sm font-medium rounded-lg bg-aqua-50 text-aqua-700 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+            </svg>
+            Inicio
+          </a>
+          
+          <a href="Peces.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-green-600 rounded-lg flex items-center hover:bg-green-50 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
+            </svg>
+            Peces
+          </a>
+      
+          <a href="plantas.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-green-600 rounded-lg flex items-center hover:bg-green-50 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
+            </svg>
+            Plantas
+          </a>
+          
+          <a href="accesorios.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-purple-600 rounded-lg flex items-center hover:bg-purple-50 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+            </svg>
+            Accesorios
+          </a>
+          
+          <a href="promociones.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-red-600 rounded-lg flex items-center hover:bg-red-50 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z" clip-rule="evenodd" />
+              <path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z" />
+            </svg>
+            Promociones
+          </a>
+          
+          <a href="blog.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-yellow-600 rounded-lg flex items-center hover:bg-yellow-50 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
+            </svg>
+            Blog
+          </a>
+          
+          <a href="contacto.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 rounded-lg flex items-center hover:bg-indigo-50 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+            </svg>
+            Contacto
+          </a>
+        </div>
+
+        <!-- Carrito y móvil -->
+        <div class="flex items-center space-x-4">
+          <button onclick="openCart()" class="relative p-2 text-gray-700 hover:text-aqua-600 rounded-full hover:bg-aqua-50 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            <span id="cart-count" class="absolute -top-1 -right-1 bg-aqua-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+          </button>
+          
+          <button id="menu-toggle" class="md:hidden p-2 text-gray-700 hover:text-aqua-600 rounded-full hover:bg-aqua-50 transition focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div id="mobile-menu" class="md:hidden hidden flex flex-col space-y-1 mt-2 px-4 pb-4">
+      <a href="index.html" class="px-4 py-2 text-sm font-medium rounded-lg bg-aqua-50 text-aqua-700 flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+        </svg>
+        Inicio
+      </a>
+
+      <a href="Peces.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-green-600 rounded-lg flex items-center hover:bg-green-50 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
+        </svg>
+        Peces
+      </a>
+
+      <a href="plantas.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-green-600 rounded-lg flex items-center hover:bg-green-50 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clip-rule="evenodd" />
+        </svg>
+        Plantas
+      </a>
+
+      <a href="accesorios.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-purple-600 rounded-lg flex items-center hover:bg-purple-50 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+        </svg>
+        Accesorios
+      </a>
+
+      <a href="promociones.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-red-600 rounded-lg flex items-center hover:bg-red-50 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z" clip-rule="evenodd" />
+          <path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z" />
+        </svg>
+        Promociones
+      </a>
+
+      <a href="blog.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-yellow-600 rounded-lg flex items-center hover:bg-yellow-50 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
+        </svg>
+        Blog
+      </a>
+
+      <a href="contacto.html" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600 rounded-lg flex items-center hover:bg-indigo-50 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+          <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+        </svg>
+        Contacto
+      </a>
+    </div>
+  </nav>
+        
+  <!-- HERO SECTION -->
+  <section class="relative bg-gradient-to-br from-aqua-900 to-aqua-600 text-white pt-32 pb-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute inset-0 bg-[url('img/water-pattern.png')] bg-repeat opacity-30"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="md:flex items-center justify-between">
+        <div class="md:w-1/2 mb-12 md:mb-0">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight">
+            Descubre el <span class="gradient-text">mundo acuático</span> con nosotros
+          </h1>
+          <p class="text-lg sm:text-xl text-aqua-100 mb-8 max-w-lg">
+            Todo lo que necesitas para crear el acuario perfecto. Peces exóticos, plantas naturales y los mejores accesorios.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="peces.html" class="px-6 py-3 bg-white text-aqua-700 font-semibold rounded-lg shadow-md hover:bg-gray-100 transition flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd" />
+              </svg>
+              Explorar Peces
+            </a>
+            <a href="promociones.html" class="px-6 py-3 bg-aqua-700 hover:bg-aqua-800 text-white font-semibold rounded-lg shadow-md transition flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z" clip-rule="evenodd" />
+                <path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z" />
+              </svg>
+              Ver Promociones
+            </a>
+          </div>
+        </div>
+        
+        <div class="md:w-1/2 relative">
+          <div class="relative max-w-md mx-auto">
+            <div class="absolute -top-6 -left-6 w-32 h-32 bg-yellow-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+            <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-aqua-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div class="absolute top-0 -right-10 w-32 h-32 bg-green-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+            
+            <div class="relative bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
+              <img src="img/Logo.jpg.png" alt="Pez tropical" class="w-full h-auto object-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="wave-shape">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- FILTROS -->
+  <div id="filters" class="max-w-7xl mx-auto px-6 py-8 flex flex-wrap gap-3 justify-center">
+    <button onclick="filtrarProductos('todos')" 
+            class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+      Todos
+    </button>
+    <button onclick="filtrarProductos('tapizantes')" 
+            class="px-4 py-2 bg-gray-200 hover:bg-green-600 hover:text-white rounded-lg transition">
+      Tapizantes
+    </button>
+    <button onclick="filtrarProductos('tallo')" 
+            class="px-4 py-2 bg-gray-200 hover:bg-green-600 hover:text-white rounded-lg transition">
+      De tallo
+    </button>
+    <button onclick="filtrarProductos('roja')" 
+            class="px-4 py-2 bg-gray-200 hover:bg-green-600 hover:text-white rounded-lg transition">
+      Plantas rojas
+    </button>
+    <button onclick="filtrarProductos('musgo')" 
+            class="px-4 py-2 bg-gray-200 hover:bg-green-600 hover:text-white rounded-lg transition">
+      Musgos
+    </button>
+    <button onclick="filtrarProductos('helecho')" 
+            class="px-4 py-2 bg-gray-200 hover:bg-green-600 hover:text-white rounded-lg transition">
+      Helechos
+    </button>
+    <button onclick="filtrarProductos('lowtech')" 
+            class="px-4 py-2 bg-gray-200 hover:bg-green-600 hover:text-white rounded-lg transition">
+      Low-Tech
+    </button>
+  </div>
+
+  <!-- LISTA DE PLANTAS -->
+  <section class="max-w-7xl mx-auto px-6 py-12">
+    <div id="product-list" class="grid gap-8">
+      <!-- Productos se cargarán aquí dinámicamente -->
+    </div>
+  </section>
+
+  <!-- MODAL INFO -->
+  <div id="info-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50 p-4">
+    <div class="bg-white rounded-lg p-6 max-w-4xl w-full max-h-[90vh] overflow-auto relative">
+      <button onclick="closeInfoModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+      <div class="md:flex gap-6">
+        <div class="md:w-1/2 mb-4 md:mb-0">
+          <img id="info-image" src="" alt="" class="w-full h-auto max-h-96 object-contain rounded-lg shadow-md" />
+        </div>
+        <div class="md:w-1/2">
+          <h3 id="info-title" class="text-3xl font-bold mb-4 text-green-700"></h3>
+          <p id="info-description" class="text-gray-700 mb-4"></p>
+          <div class="mb-4">
+            <h4 class="font-semibold text-lg mb-2">Requisitos de cuidado:</h4>
+            <div id="info-care" class="grid grid-cols-2 gap-2"></div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span id="info-price" class="text-2xl font-bold text-green-600"></span>
+            <button id="info-add-to-cart" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg transition">
+              Añadir al carrito
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL CARRITO -->
+  <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-70 hidden z-50 flex items-center justify-center sm:justify-end">
+    <div class="bg-white w-[95%] sm:w-full sm:max-w-md md:max-w-lg lg:max-w-xl p-4 sm:p-6 rounded-lg max-h-[90vh] overflow-y-auto">
+      <h3 class="text-2xl font-semibold mb-6">Carrito de Compras</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full table-auto mb-6 text-gray-700">
+          <thead class="border-b border-gray-300">
+            <tr>
+              <th class="text-left px-2 py-2 min-w-[140px]">Producto</th>
+              <th class="text-center px-2 py-2 w-24">Precio c/u</th>
+              <th class="text-center px-2 py-2 w-40">Cantidad</th>
+              <th class="text-right px-2 py-2 w-32">Total</th>
+              <th class="px-2 py-2 w-10">Eliminar</th>
+            </tr>
+          </thead>
+          <tbody id="cart-items">
+            <!-- Productos se agregan aquí -->
+          </tbody>
+        </table>
+      </div>
+      <div class="border-t border-gray-300 pt-4 mb-6">
+        <div class="flex justify-between text-lg font-semibold">
+          <span>Total:</span>
+          <span id="cart-total">Q0.00</span>
+        </div>
+      </div>
+      <th class="px-2 py-2 w-10">Nota: El stock de peces vivos varía constantemente. Recibirás confirmación de disponibilidad vía WhatsApp o correo electrónico antes de procesar tu pago o entrega.</th>
+      <div class="mb-6">
+        <label for="clienteNombre" class="block font-semibold mb-2">Tu Nombre:</label>
+        <input type="text" id="clienteNombre" class="w-full border border-gray-300 rounded px-4 py-2 text-lg" placeholder="Escribe tu nombre" />
+      </div>
+      <div class="space-y-3 mb-4">
+        <button onclick="finalizarPedido()" class="bg-aqua-600 hover:bg-aqua-700 text-white w-full py-4 rounded-lg transition-all duration-200 hover:scale-[1.02] shadow-lg hover:shadow-xl font-bold text-lg flex items-center justify-center gap-3">
+          <span class="text-2xl">✅</span> 
+          <span>FINALIZAR COMPRA</span>
+        </button>
+        <div class="grid grid-cols-2 gap-3">
+          <button onclick="vaciarCarrito()" class="bg-gray-500 hover:bg-gray-600 text-white py-3 rounded transition-all duration-200 hover:scale-[1.02] shadow-md hover:shadow-lg font-semibold flex items-center justify-center gap-2">
+            <span class="text-xl">🗑️</span> Vaciar
+          </button>
+          <button onclick="closeCart()" class="bg-red-500 hover:bg-red-600 text-white py-3 rounded transition-all duration-200 hover:scale-[1.02] shadow-md hover:shadow-lg font-semibold flex items-center justify-center gap-2">
+            <span class="text-xl">❌</span> Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <p>&copy; 2025 AQUA-GT. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Datos de plantas acuáticas
+    const productosPlantas = [
+      {
+        id: 'pla001',
+        nombre: "Valisneria",
+        precio: 25.00,
+        imagen: 'img/Liverpool_Creek_Aquariums_Valisneria_tortifolia_aquarium_plant_2000x.webp',
+        categoria: 'lowtech',
+        descripcion: 'Planta de hojas largas y cintas que crece formando densas matas. Ideal para acuarios comunitarios y como refugio para peces. No requiere CO2 pero crece mejor con iluminación moderada.',
+        cuidados: {
+          iluminacion: 'Moderada',
+          co2: 'Opcional',
+          dificultad: 'Baja',
+          crecimiento: 'Rápido',
+          posicion: 'Fondo'
+        }
+      },
+      {
+        id: 'pla002',
+        nombre: "Espada Amazónica",
+        precio: 35.00,
+        imagen: 'img/echinodorus-bleheri.jpg',
+        categoria: 'lowtech',
+        descripcion: 'Planta robusta con hojas anchas que forma un hermoso centro en el acuario. Variedad popular para acuarios comunitarios de tamaño medio a grande.',
+        cuidados: {
+          iluminacion: 'Moderada-Alta',
+          co2: 'Recomendado',
+          dificultad: 'Media',
+          crecimiento: 'Moderado',
+          posicion: 'Medio-Fondo'
+        }
+      },
+      {
+        id: 'pla003',
+        nombre: "Cabomba",
+        precio: 30.00,
+        imagen: 'img/Cabomba aquatica.jpg',
+        categoria: 'tallo',
+        descripcion: 'Planta de tallo con hojas finamente divididas que crece rápidamente. Excelente oxigenador natural pero requiere buenas condiciones de agua.',
+        cuidados: {
+          iluminacion: 'Alta',
+          co2: 'Requerido',
+          dificultad: 'Media-Alta',
+          crecimiento: 'Rápido',
+          posicion: 'Fondo/Laterales'
+        }
+      },
+      {
+        id: 'pla004',
+        nombre: "Anubias Nana",
+        precio: 40.00,
+        imagen: 'img/anubias-nana.jpg',
+        categoria: 'lowtech',
+        descripcion: 'Planta de crecimiento lento ideal para principiantes. Puede crecer sumergida o parcialmente sumergida. No necesita ser plantada en el sustrato.',
+        cuidados: {
+          iluminacion: 'Baja-Moderada',
+          co2: 'No necesario',
+          dificultad: 'Muy baja',
+          crecimiento: 'Lento',
+          posicion: 'Primer plano/Medio'
+        }
+      },
+      {
+        id: 'pla005',
+        nombre: "Musgo de Java",
+        precio: 20.00,
+        imagen: 'img/java-moss.jpg',
+        categoria: 'musgo',
+        descripcion: 'Musgo versátil que puede crecer en casi cualquier superficie. Ideal para acuarios de cría y paisajes acuáticos. Requiere muy pocos cuidados.',
+        cuidados: {
+          iluminacion: 'Baja-Alta',
+          co2: 'No necesario',
+          dificultad: 'Muy baja',
+          crecimiento: 'Moderado',
+          posicion: 'Cualquier lugar'
+        }
+      },
+      {
+        id: 'pla006',
+        nombre: "Helecho de Java",
+        precio: 28.00,
+        imagen: 'img/java-fern.jpg',
+        categoria: 'helecho',
+        descripcion: 'Planta resistente que no necesita ser plantada en el sustrato. Ideal para acuarios con peces que podrían dañar plantas más delicadas.',
+        cuidados: {
+          iluminacion: 'Baja-Moderada',
+          co2: 'No necesario',
+          dificultad: 'Muy baja',
+          crecimiento: 'Lento',
+          posicion: 'Medio-Fondo'
+        }
+      }
+    ];
+
+    // Función para filtrar productos
+    function filtrarProductos(tipo) {
+      // Resetear todos los botones a estilo normal
+      document.querySelectorAll('#filters button').forEach(btn => {
+        btn.classList.remove('bg-green-600', 'text-white');
+        btn.classList.add('bg-gray-200', 'hover:bg-green-600', 'hover:text-white');
+      });
+      
+      // Resaltar el botón activo
+      if (tipo !== 'todos') {
+        const activeBtn = document.querySelector(`button[onclick="filtrarProductos('${tipo}')"]`);
+        if (activeBtn) {
+          activeBtn.classList.add('bg-green-600', 'text-white');
+          activeBtn.classList.remove('bg-gray-200', 'hover:bg-green-600', 'hover:text-white');
+        }
+      } else {
+        document.querySelector(`button[onclick="filtrarProductos('todos')"]`)
+          .classList.add('bg-green-600', 'text-white');
+      }
+      
+      // Filtrar productos
+      let productosFiltrados;
+      if (tipo === 'todos') {
+        productosFiltrados = productosPlantas;
+      } else {
+        productosFiltrados = productosPlantas.filter(planta => {
+          return planta.categoria === tipo || 
+                 planta.nombre.toLowerCase().includes(tipo);
+        });
+      }
+      
+      // Renderizar productos filtrados
+      renderizarProductosFiltrados(productosFiltrados);
+    }
+
+    // Función para renderizar productos filtrados
+    function renderizarProductosFiltrados(productos) {
+      const productList = document.getElementById('product-list');
+      if (!productList) return;
+
+      productList.innerHTML = '';
+      
+      if (productos.length === 0) {
+        productList.innerHTML = `
+          <div class="col-span-full text-center py-12">
+            <p class="text-gray-500 text-lg">No encontramos plantas con estos filtros.</p>
+            <button onclick="filtrarProductos('todos')" class="mt-4 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition text-lg">
+              Mostrar todas las plantas
+            </button>
+          </div>
+        `;
+        return;
+      }
+      
+      productos.forEach(planta => {
+        const card = document.createElement('div');
+        card.className = 'product-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300';
+        
+        card.innerHTML = `
+          <div class="product-image-container">
+            <img src="${planta.imagen}" alt="${planta.nombre}" class="product-image">
+          </div>
+          
+          <div class="product-content">
+            <h4 class="product-title">${planta.nombre}</h4>
+            <p class="product-price">Q${planta.precio.toFixed(2)}</p>
+            
+            <div class="product-actions">
+              <button onclick="mostrarDetalle('${planta.id}')" class="action-button info-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Detalles
+              </button>
+              
+              <button onclick="addToCart(${JSON.stringify(planta).replace(/"/g, '&quot;')})" class="action-button add-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                Añadir
+              </button>
+            </div>
+          </div>
+        `;
+        
+        productList.appendChild(card);
+      });
+    }
+
+    // Mostrar detalles del producto en modal
+    function mostrarDetalle(plantaId) {
+      const planta = productosPlantas.find(p => p.id === plantaId);
+      if (!planta) return;
+
+      document.getElementById('info-title').textContent = planta.nombre;
+      document.getElementById('info-image').src = planta.imagen;
+      document.getElementById('info-image').alt = planta.nombre;
+      document.getElementById('info-description').textContent = planta.descripcion;
+      document.getElementById('info-price').textContent = `Q${planta.precio.toFixed(2)}`;
+      
+      // Mostrar información de cuidados
+      const careContainer = document.getElementById('info-care');
+      careContainer.innerHTML = '';
+      for (const [key, value] of Object.entries(planta.cuidados)) {
+        const careItem = document.createElement('div');
+        careItem.className = 'bg-gray-100 p-2 rounded';
+        careItem.innerHTML = `<span class="font-medium capitalize">${key}:</span> ${value}`;
+        careContainer.appendChild(careItem);
+      }
+      
+      // Configurar botón de añadir al carrito
+      const addButton = document.getElementById('info-add-to-cart');
+      addButton.onclick = function() {
+        addToCart(planta);
+        closeInfoModal();
+      };
+      
+      document.getElementById('info-modal').classList.remove('hidden');
+    }
+
+    function closeInfoModal() {
+      document.getElementById('info-modal').classList.add('hidden');
+    }
+
+    // Funciones del carrito
+    function addToCart(producto) {
+      const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      const itemExistente = carrito.find(item => item.id === producto.id);
+      
+      if (itemExistente) {
+        itemExistente.cantidad += 1;
+      } else {
+        carrito.push({ ...producto, cantidad: 1 });
+      }
+      
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      actualizarContadorCarrito();
+      
+      // Mostrar notificación
+      alert(`¡${producto.nombre} añadido al carrito!`);
+    }
+
+    function actualizarContadorCarrito() {
+      const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      document.getElementById('cart-count').textContent = carrito.reduce((total, item) => total + item.cantidad, 0);
+    }
+
+    function openCart() {
+      const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      const cartItems = document.getElementById('cart-items');
+      const cartTotal = document.getElementById('cart-total');
+      
+      if (cartItems) {
+        cartItems.innerHTML = '';
+        
+        if (carrito.length === 0) {
+          cartItems.innerHTML = '<tr><td colspan="5" class="text-center py-4 text-gray-500">El carrito está vacío</td></tr>';
+          cartTotal.textContent = 'Q0.00';
+        } else {
+          let total = 0;
+          
+          carrito.forEach(item => {
+            const itemTotal = item.precio * item.cantidad;
+            total += itemTotal;
+            
+            const row = document.createElement('tr');
+            row.className = 'border-b border-gray-200';
+            row.innerHTML = `
+              <td class="px-2 py-3">
+                <div class="flex items-center">
+                  <img src="${item.imagen}" alt="${item.nombre}" class="w-12 h-12 object-cover rounded mr-3">
+                  <span>${item.nombre}</span>
+                </div>
+              </td>
+              <td class="px-2 py-3 text-center">Q${item.precio.toFixed(2)}</td>
+              <td class="px-2 py-3 text-center">
+                <div class="flex items-center justify-center">
+                  <button onclick="updateQuantity('${item.id}', ${item.cantidad - 1})" class="px-2 py-1 bg-gray-200 rounded-l">-</button>
+                  <span class="px-3 py-1 bg-gray-100">${item.cantidad}</span>
+                  <button onclick="updateQuantity('${item.id}', ${item.cantidad + 1})" class="px-2 py-1 bg-gray-200 rounded-r">+</button>
+                </div>
+              </td>
+              <td class="px-2 py-3 text-right">Q${itemTotal.toFixed(2)}</td>
+              <td class="px-2 py-3 text-center">
+                <button onclick="removeFromCart('${item.id}')" class="text-red-500 hover:text-red-700">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                  </svg>
+                </button>
+              </td>
+            `;
+            cartItems.appendChild(row);
+          });
+          
+          cartTotal.textContent = `Q${total.toFixed(2)}`;
+        }
+      }
+      
+      document.getElementById('cart-modal').classList.remove('hidden');
+    }
+
+    function closeCart() {
+      document.getElementById('cart-modal').classList.add('hidden');
+    }
+
+    function updateQuantity(productId, newQuantity) {
+      if (newQuantity < 1) {
+        removeFromCart(productId);
+        return;
+      }
+      
+      const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      const itemIndex = carrito.findIndex(item => item.id === productId);
+      
+      if (itemIndex !== -1) {
+        carrito[itemIndex].cantidad = newQuantity;
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        actualizarContadorCarrito();
+        openCart();
+      }
+    }
+
+    function removeFromCart(productId) {
+      const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      const nuevoCarrito = carrito.filter(item => item.id !== productId);
+      
+      localStorage.setItem('carrito', JSON.stringify(nuevoCarrito));
+      actualizarContadorCarrito();
+      openCart();
+    }
+
+    function vaciarCarrito() {
+      localStorage.removeItem('carrito');
+      actualizarContadorCarrito();
+      openCart();
+    }
+
+    function finalizarPedido() {
+      const nombre = document.getElementById('clienteNombre').value.trim();
+      const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      
+      if (carrito.length === 0) {
+        alert('El carrito está vacío');
+        return;
+      }
+      
+      if (!nombre) {
+        alert('Por favor ingresa tu nombre');
+        return;
+      }
+      
+      // Simular envío del pedido
+      const total = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
+      alert(`¡Pedido realizado, ${nombre}!\nTotal: Q${total.toFixed(2)}\nGracias por tu compra.`);
+      
+      // Vaciar carrito después de finalizar
+      vaciarCarrito();
+      closeCart();
+    }
+
+    // Inicialización al cargar la página
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mostrar todos los productos inicialmente
+      filtrarProductos('todos');
+      
+      // Actualizar contador del carrito (si existe en localStorage)
+      actualizarContadorCarrito();
+      
+      // Configurar el toggle del menú móvil
+      const toggleButton = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (toggleButton && mobileMenu) {
+        toggleButton.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
