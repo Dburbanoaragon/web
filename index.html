@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Metadatos básicos -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peces Ornamentales Nacionales de Guatemala | Aqua-GT</title>
+  <meta name="description" content="Información y galería de peces ornamentales nacionales de Guatemala. Descubre especies, cuidados y opciones de contacto para adquirir peces y accesorios." />
+
+  <!-- SEO/Compartir -->
+  <meta property="og:title" content="Peces Ornamentales Nacionales de Guatemala" />
+  <meta property="og:description" content="Galería, información de especies y contacto de Aqua-GT." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/img/banners/Logo.png" />
+  <meta property="og:url" content="https://tudominio.com/" />
+
+  <link rel="icon" href="/img/icons/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <!-- Enlace para accesibilidad -->
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- ===================== HEADER ===================== -->
+  <header id="inicio" role="banner">
+    <div class="container">
+      <a href="/index.html" class="logo" aria-label="Ir al inicio Aqua-GT">
+        <img src="/img/icons/Logo.png" alt="Aqua-GT" width="120" height="40" />
+      </a>
+
+      <nav aria-label="Navegación principal">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-haspopup="true">Menú</button>
+        <ul id="menu" class="menu">
+          <li><a href="/index.html#hero">Inicio</a></li>
+          <li><a href="/Tienda.html" aria-current="page">Peces</a></li>
+          <li><a href="Plantas.html">Plantas</a></li>
+          <li><a href="/index.html#contacto">Contacto</a></li>
+        </ul>
+
+        <!-- Carrito -->
+        <a class="cart-link" href="/carrito.html" aria-label="Ver carrito">
+          <svg class="cart-icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M7 4h-2l-1 2v2h2l2.6 7h8.6l2.2-6h-11.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="10" cy="20" r="1.6" fill="currentColor"/>
+            <circle cx="17" cy="20" r="1.6" fill="currentColor"/>
+          </svg>
+          <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== MAIN ===================== -->
+  <main id="contenido">
+    <!-- ========== HERO ========== -->
+    <section id="hero" class="section section--hero" aria-label="Banner principal">
+      <div class="container">
+        <!-- Decoración acuática (burbujas) -->
+<div class="bubbles" aria-hidden="true"></div>
+
+        <h1>Peces Ornamentales Nacionales de Guatemala</h1>
+        <p>Explora especies locales, aprende sus cuidados y recibe asesoría para tu acuario en casa.</p>
+
+        <div class="badges" aria-hidden="true">
+          <span class="badge">🐟 Especies locales</span>
+          <span class="badge">🌿 Asesoría gratuita</span>
+          <span class="badge">🚚 Envíos en Guatemala</span>
+        </div>
+
+        <div class="cta-row">
+          <a
+            class="btn btn--whatsapp"
+            href="https://wa.me/50242285137?text=Hola%20Aqua-GT%2C%20quiero%20informaci%C3%B3n%20sobre%20peces%20ornamentales%20nacionales."
+            target="_blank" rel="noopener"
+            aria-label="Escribir por WhatsApp a Aqua-GT"
+          >Consultar por WhatsApp</a>
+
+          <a class="btn" href="#galeria">Ver galería</a>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="beneficios" aria-labelledby="beneficios-title">
+  <div class="container">
+    <h2 id="beneficios-title">¿Por qué elegir Aqua-GT?</h2>
+    <ul class="beneficios-grid">
+      <li>
+        <img src="/img/icons/fish (2).png" alt="" aria-hidden="true">
+        <h3>Especies locales y sanas</h3>
+        <p>Cuidamos cuarentena y manejo responsable para peces fuertes y adaptados.</p>
+      </li>
+      <li>
+        <img src="/img/icons/business-people.png" alt="" aria-hidden="true">
+        <h3>Asesoría real</h3>
+        <p>Te guiamos en armado, parámetros y compatibilidades antes y después de comprar.</p>
+      </li>
+      <li>
+        <img src="/img/icons/package-box.png" alt="" aria-hidden="true">
+        <h3>Envíos en Guatemala</h3>
+        <p>Empaque con oxígeno y aislamiento. Entregas coordinadas según clima y ruta.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+    <!-- ========== TIENDA ========== -->
+    <section id="tienda" class="section" aria-labelledby="titulo-tienda">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="titulo-tienda">Peces</h2>
+          <p>Elige tus productos y agrégalos al carrito. Luego revisa tu pedido y envíalo por WhatsApp.</p>
+        </header>
+
+        <div class="grid-tienda">
+          <!-- Producto 1 -->
+          <article class="card-prod" data-id="p1" data-nombre="Koi" data-precio="10" data-img="/img/peces/koi_1.JPG">
+            <img src="/img/peces/koi_1.JPG" alt="Pareja de Cíclido convicto" loading="lazy" width="400" height="300">
+            <div class="info">
+              <h3 class="titulo">koi</h3>
+              <p class="detalle">Especie resistente, ideal para acuaristas con algo de experiencia.</p>
+              <p class="precio">Q10.00</p>
+              <div class="actions"><button class="btn btn--sm btn-add-cart" type="button">Agregar al carrito</button></div>
+            </div>
+          </article>
+
+          <!-- Producto 2 -->
+          <article class="card-prod" data-id="p2" data-nombre="Angel Escalar" data-precio="12" data-img="/img/peces/angel.jpeg">
+            <img src="/img/peces/angel.jpeg" alt="Trío de Platies" loading="lazy" width="400" height="300">
+            <div class="info">
+              <h3 class="titulo">Angel Escalar</h3>
+              <p class="detalle">Fáciles y coloridos. Perfectos para comunitario.</p>
+              <p class="precio">Q12.00</p>
+              <div class="actions"><button class="btn btn--sm btn-add-cart" type="button">Agregar al carrito</button></div>
+            </div>
+          </article>
+
+          <!-- Producto 3 -->
+          <article class="card-prod" data-id="p3" data-nombre="Morro Telescopio" data-precio="10" data-img="/img/peces/Moro_telescopio_1.JPG">
+            <img src="/img/peces/Moro_telescopio_1.JPG" alt="Mollys juveniles (x6)" loading="lazy" width="400" height="300">
+            <div class="info">
+              <h3 class="titulo">Morro Telescopio</h3>
+              <p class="detalle">Activos y resistentes; aceptan dieta variada.</p>
+              <p class="precio">Q10.00</p>
+              <div class="actions"><button class="btn btn--sm btn-add-cart" type="button">Agregar al carrito</button></div>
+            </div>
+          </article>
+
+          <!-- Producto 4 -->
+          <article class="card-prod" data-id="p4" data-nombre="Cometa" data-precio="10" data-img="/img/peces/cometa_1.jpg">
+            <img src="/img/peces/cometa_1.jpg" alt="Cola de espada (x4)" loading="lazy" width="400" height="300">
+            <div class="info">
+              <h3 class="titulo">Cometa</h3>
+              <p class="detalle">Vivos y coloridos; excelente para acuarios familiares.</p>
+              <p class="precio">Q10.00</p>
+              <div class="actions"><button class="btn btn--sm btn-add-cart" type="button">Agregar al carrito</button></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="tienda-actions"><a class="btn" href="Tienda.html">Ir a Peces</a></div>
+      </div>
+    </section>
+
+<!-- ========== PLANTAS ========== -->
+<section id="plantas" class="section" aria-labelledby="titulo-plantas">
+  <div class="container">
+    <header class="section-head">
+      <h2 id="titulo-plantas">Plantas</h2>
+      <p>Plantas acuáticas fáciles y de bajo mantenimiento, perfectas para acuarios comunitarios.</p>
+    </header>
+
+    <div class="grid-tienda">
+      <!-- Planta 1 -->
+      <article class="card-prod"
+        data-id="pl1"
+        data-nombre="Espada Amazonica"
+        data-precio="15"
+        data-img="./img/plantas/amazona_plnta_2.jpg"
+        data-g2="./img/plantas/amzonica_1_1.jpg"   
+        data-g3="./img/plantas/amazonica-removebg-preview.png "
+        data-tipo="planta"
+        data-ilum="Baja – Media"
+        data-co2="No requerido"
+        data-crec="Lento"
+        data-pos="Frontal/Medio (sobre troncos/rocas)"
+        data-dificultad="Fácil"
+        data-temp="22–28 °C"
+        data-ph="6.0–7.8"
+        data-prop="División de rizoma">
+        <img src="./img/plantas/amzonica_1_1.jpg" alt="Espada Amazonica" loading="lazy" width="400" height="300">
+        <div class="info">
+          <h3 class="titulo">Espada Amazonica</h3>
+          <p class="detalle">Súper resistente. Ideal para principiantes.</p>
+          <p class="precio">Q15.00</p>
+          <div class="actions" style="display:flex; gap:.5rem; justify-content:flex-end;">
+            <button class="btn btn--sm btn--outline btn-detalles" type="button">Ver detalles</button>
+            <button class="btn btn--sm btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Planta 2 -->
+      <article class="card-prod"
+        data-id="pl2"
+        data-nombre="Vallisneria"
+        data-precio="10"
+        data-img="./img/plantas/valisneria_1_1.jpg"
+        data-g2="./img/plantas/vallisneria-asiatica-removebg-preview.png"
+        data-g3="./img/plantas/microsorum_pteropus_3.jpg"
+        data-tipo="planta"
+        data-ilum="Baja – Media"
+        data-co2="No requerido"
+        data-crec="Lento – Medio"
+        data-pos="Medio/Fondo (sobre troncos/rocas)"
+        data-dificultad="Fácil"
+        data-temp="20–28 °C"
+        data-ph="6.0–7.5"
+        data-prop="Rizoma; división">
+        <img src="./img/plantas/valisneria_1_1.jpg" alt="Vallisneria" loading="lazy" width="400" height="300">
+        <div class="info">
+          <h3 class="titulo">Vallisneria</h3>
+          <p class="detalle">No se entierra. Va atado a troncos o rocas.</p>
+          <p class="precio">Q10.00</p>
+          <div class="actions" style="display:flex; gap:.5rem; justify-content:flex-end;">
+            <button class="btn btn--sm btn--outline btn-detalles" type="button">Ver detalles</button>
+            <button class="btn btn--sm btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Planta 3 -->
+      <article class="card-prod"
+        data-id="pl3"
+        data-nombre="Cola zorro"
+        data-precio="10"
+        data-img="./img/plantas/cola_2.webp "
+        data-g2="./img/plantas/cola_1.jpg"
+        data-g3="./img/plantas/cola_3.jpg"
+        data-tipo="planta"
+        data-ilum="Media"
+        data-co2="Opcional"
+        data-crec="Rápido"
+        data-pos="Fondo"
+        data-dificultad="Fácil – Media"
+        data-temp="20–28 °C"
+        data-ph="6.5–8.0"
+        data-prop="Estolones (se expande por hijuelos)">
+        <img src="./img/plantas/cola_2.webp" alt="Cola zorro" loading="lazy" width="400" height="300">
+        <div class="info">
+          <h3 class="titulo">Cola zorro</h3>
+          <p class="detalle">Forma praderas altas. Muy decorativa.</p>
+          <p class="precio">Q10.00</p>
+          <div class="actions" style="display:flex; gap:.5rem; justify-content:flex-end;">
+            <button class="btn btn--sm btn--outline btn-detalles" type="button">Ver detalles</button>
+            <button class="btn btn--sm btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+
+            <!-- Planta 4 -->
+      <article class="card-prod"
+        data-id="pl4"
+        data-nombre="Cabomba"
+        data-precio="10"
+        data-img="./img/plantas/cabo_1.webp "
+        data-g2="./img/plantas/cabo_2.webp"
+        data-g3="./img/plantas/cabo_3.jpg"
+        data-tipo="planta"
+        data-ilum="Media"
+        data-co2="Opcional"
+        data-crec="Rápido"
+        data-pos="Fondo"
+        data-dificultad="Fácil – Media"
+        data-temp="20–28 °C"
+        data-ph="6.5–8.0"
+        data-prop="Estolones (se expande por hijuelos)">
+        <img src="./img/plantas/cabo_1.webp " alt="Cabomba" loading="lazy" width="400" height="300">
+        <div class="info">
+          <h3 class="titulo">Cabomba</h3>
+          <p class="detalle">Forma praderas altas. Muy decorativa.</p>
+          <p class="precio">Q10.00</p>
+          <div class="actions" style="display:flex; gap:.5rem; justify-content:flex-end;">
+            <button class="btn btn--sm btn--outline btn-detalles" type="button">Ver detalles</button>
+            <button class="btn btn--sm btn-add-cart" type="button">Agregar al carrito</button>
+          </div>
+        </div>
+      </article>
+
+  
+    </div>
+
+    <div class="tienda-actions">
+      <a class="btn" href="Plantas.html">Ir a Plantas</a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+ <!-- ========== CONTACTO (V2 moderno, con iconos propios) ========== -->
+<section id="contacto" class="section section--contactoV2" aria-labelledby="titulo-contacto">
+  <div class="container">
+    <header class="contacto-head">
+      <h2 id="titulo-contactoV2">Contacto</h2>
+      <p>¿Tienes dudas sobre especies, stock o envíos? Escríbenos y con gusto te ayudamos.</p>
+    </header>
+
+    <div class="contactoV2-grid">
+      <!-- Card: WhatsApp directo -->
+      <div class="c-card c-card--wa" role="region" aria-label="Contacto rápido por WhatsApp">
+        <h3>Contacto rápido</h3>
+        <p>Atención de domingo a domingo, 10:00–21:00. Te respondemos lo antes posible.</p>
+
+        <a class="c-btn c-btn--wa"
+           href="https://wa.me/50242285137?text=Hola%20Aqua-GT%2C%20quisiera%20informaci%C3%B3n%20sobre%20peces%20y%20env%C3%ADos."
+           target="_blank" rel="noopener">
+          <img src="/img/icons/whatsapp (4).png" alt="" aria-hidden="true" class="c-btn__icon">
+          Escribir por WhatsApp
+        </a>
+
+        <small class="c-note">Nota: los pedidos están sujetos a disponibilidad de stock.</small>
+      </div>
+
+      <!-- Card: Redes sociales (usa tus propios iconos) -->
+      <aside class="c-card" aria-label="Redes sociales">
+        <h3>Síguenos</h3>
+
+        <ul class="s-links">
+          <!-- Ejemplo: Facebook -->
+          <li>
+            <a class="s-link"
+               style="--accent:#1877F2"
+               href="https://www.facebook.com/aquaguate" target="_blank" rel="noopener"
+               aria-label="Abrir Facebook de Aqua-GT">
+              <span class="s-link__icon">
+                <!-- Sube tu icono a /img/social/facebook.svg o .png -->
+                <img src="/img/icons/communication.png" alt="" aria-hidden="true">
+              </span>
+              <span class="s-link__body">
+                <strong>Facebook</strong>
+                <small>@aquagt</small>
+              </span>
+              <span class="s-link__open" aria-hidden="true">Abrir →</span>
+            </a>
+          </li>
+
+          <!-- Instagram -->
+          <li>
+            <a class="s-link"
+               style="--accent:#E1306C"
+               href="https://www.instagram.com/aqua___gt/" target="_blank" rel="noopener"
+               aria-label="Abrir Instagram de Aqua-GT">
+              <span class="s-link__icon">
+                <img src="/img/icons/instagram (1).png" alt="" aria-hidden="true">
+              </span>
+              <span class="s-link__body">
+                <strong>Instagram</strong>
+                <small>@aquagt</small>
+              </span>
+              <span class="s-link__open" aria-hidden="true">Abrir →</span>
+            </a>
+          </li>
+
+          <!-- WhatsApp -->
+          <li>
+            <a class="s-link"
+               style="--accent:#25D366"
+               href="https://wa.me/50242285137" target="_blank" rel="noopener"
+               aria-label="Abrir WhatsApp de Aqua-GT">
+              <span class="s-link__icon">
+                <img src="/img/icons/whatsapp (4).png" alt="" aria-hidden="true">
+              </span>
+              <span class="s-link__body">
+                <strong>WhatsApp</strong>
+                <small>+502 4228-5137</small>
+              </span>
+              <span class="s-link__open" aria-hidden="true">Abrir →</span>
+            </a>
+          </li>
+
+          <!-- TikTok -->
+          <li>
+            <a class="s-link"
+               style="--accent:#000000"
+               href="https://www.tiktok.com/@aquagt" target="_blank" rel="noopener"
+               aria-label="Abrir TikTok de Aqua-GT">
+              <span class="s-link__icon">
+                <img src="/img/icons/tiktok.png" alt="" aria-hidden="true">
+              </span>
+              <span class="s-link__body">
+                <strong>TikTok</strong>
+                <small>@aquagt</small>
+              </span>
+              <span class="s-link__open" aria-hidden="true">Abrir →</span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ========== MODAL FICHA PEZ ========== -->
+  <div class="modal-backdrop" data-modal-backdrop hidden></div>
+  <aside class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" hidden>
+    <button class="modal-cerrar" type="button" aria-label="Cerrar ficha">&times;</button>
+    <div class="modal-contenido">
+      <div class="modal-img"><img id="modal-img" src="" alt="" width="640" height="480" /></div>
+      <div class="modal-texto">
+        <h3 id="modal-titulo">Título del pez</h3>
+        <p class="modal-sub"><em id="modal-cientifico">Nombre científico</em></p>
+        <ul class="modal-datos">
+          <li><strong>Tamaño:</strong> <span id="modal-tamanio"></span></li>
+          <li><strong>Hábitat:</strong> <span id="modal-habitat"></span></li>
+          <li><strong>Parámetros:</strong> <span id="modal-parametros"></span></li>
+          <li><strong>Alimentación:</strong> <span id="modal-alimentacion"></span></li>
+          <li><strong>Comportamiento:</strong> <span id="modal-comportamiento"></span></li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+
+  <section class="cta-band" aria-label="Consulta y stock">
+  <div class="container cta-band__inner">
+    <div class="cta-band__text">
+      <h3>¿Listo para tu nuevo acuario?</h3>
+      <p>Escríbenos y revisamos especies disponibles hoy. <strong>Los pedidos dependen de stock</strong> y condiciones de envío.</p>
+    </div>
+    <a class="btn btn--wa" href="https://wa.me/50242285137?text=Hola%20Aqua-GT%2C%20quisiera%20revisar%20stock%20disponible." target="_blank" rel="noopener">
+      Consultar stock por WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- ========= Modal Detalle de Producto (reutilizable) ========= -->
+<div class="modal-prod-backdrop" id="prod-backdrop" hidden></div>
+
+<aside class="modal-prod" id="prod-modal" role="dialog" aria-modal="true" aria-labelledby="prod-titulo" hidden>
+  <button class="modal-prod-close" type="button" aria-label="Cerrar">&times;</button>
+
+  <div class="modal-prod-body">
+    <div class="modal-prod-gallery">
+      <img id="prod-img-main" src="" alt="" width="800" height="600" loading="eager">
+      <div class="modal-prod-thumbs" id="prod-thumbs"><!-- Miniaturas por JS --></div>
+    </div>
+
+    <div class="modal-prod-info">
+      <h3 id="prod-titulo">Título del producto</h3>
+      <p id="prod-price" class="prod-price">Q0.00</p>
+      <p id="prod-desc" class="prod-desc">Descripción del producto.</p>
+
+      <div class="prod-actions">
+        <div class="qty">
+          <button type="button" id="qty-dec" title="Disminuir">-</button>
+          <input type="text" id="qty-input" value="1" inputmode="numeric" aria-label="Cantidad">
+          <button type="button" id="qty-inc" title="Aumentar">+</button>
+        </div>
+        <button class="btn" id="prod-add">Agregar al carrito</button>
+      </div>
+    </div>
+  </div>
+</aside>
+
+
+<!-- ===================== FOOTER (moderno) ===================== -->
+<footer class="footer-site" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Col 1: Marca -->
+      <div class="footer-brand">
+        <a class="footer-logo" href="#inicio" aria-label="Volver al inicio">
+          <img src="/img/icons/Logo.png" alt="Aqua-GT" width="140" height="44" loading="lazy">
+        </a>
+        <p class="footer-text">
+          Peces ornamentales nacionales · Asesoría y envíos en Guatemala.
+        </p>
+      </div>
+
+      <!-- Col 2: Enlaces -->
+      <nav class="footer-nav" aria-label="Enlaces del sitio">
+        <h3 class="footer-title">Explora</h3>
+        <ul class="footer-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#tienda">Tienda</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Col 3: Contacto / Redes -->
+      <div class="footer-contact">
+        <h3 class="footer-title">Conecta</h3>
+
+        <!-- Botón WhatsApp directo -->
+        <a class="btn btn--wa footer-wa"
+           href="https://wa.me/50242285137?text=Hola%20Aqua-GT%2C%20quisiera%20informaci%C3%B3n%20sobre%20peces%20y%20env%C3%ADos."
+           target="_blank" rel="noopener">
+          <img src="/img/icons/whatsapp (4).png" alt="" aria-hidden="true">
+          WhatsApp
+        </a>
+
+        <!-- Redes (pon tus propios iconos) -->
+        <ul class="footer-social">
+          <li>
+            <a href="https://facebook.com/aquagt" target="_blank" rel="noopener" aria-label="Facebook">
+              <img src="/img/icons/communication.png" alt="" aria-hidden="true">
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/aquagt" target="_blank" rel="noopener" aria-label="Instagram">
+              <img src="/img/icons/instagram (1).png" alt="" aria-hidden="true">
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/50242285137" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <img src="/img/icons/whatsapp (4).png" alt="" aria-hidden="true">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.tiktok.com/@aquagt" target="_blank" rel="noopener" aria-label="TikTok">
+              <img src="/img/icons/tiktok.png" alt="" aria-hidden="true">
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Barra inferior -->
+    <div class="footer-bottom">
+      <small>&copy; <span id="anio"></span> Aqua-GT · Guatemala · Todos los derechos reservados</small>
+
+      <ul class="footer-legal">
+        <li><a href="#" rel="nofollow">Privacidad</a></li>
+        <li><a href="#" rel="nofollow">Términos</a></li>
+      </ul>
+
+      <a href="#inicio" class="footer-top" aria-label="Volver al inicio">↑ Inicio</a>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tienda | Aqua-GT</title>
+  <meta name="description" content="Compra peces ornamentales y productos de Aqua-GT. Agrega al carrito y envía tu pedido por WhatsApp." />
+  <link rel="icon" href="./img/icons/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="./css/styles.css" />
+
+  <!-- Parche visual rápido: cards uniformes y la imagen no se sale -->
+  <style>
+    .card-prod{display:flex;flex-direction:column;border-radius:16px;overflow:hidden;}
+    .card-prod>img{width:100%;aspect-ratio:4/3;height:auto;object-fit:cover;display:block;background:#eef3f7;}
+    .card-prod .info{display:flex;flex-direction:column;flex:1;}
+    .card-prod .actions{margin-top:auto;}
+    /* Modal producto: imagen principal contenida */
+    #prod-img-main{width:100%;height:auto;max-height:min(48vh,420px);object-fit:contain;background:#eef3f7;border-radius:12px;}
+    .modal-prod-thumbs{grid-auto-columns:80px}
+    .modal-prod-thumbs img{height:56px;object-fit:cover}
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header id="inicio" role="banner">
+    <div class="container">
+      <a href="./index.html" class="logo" aria-label="Ir al inicio Aqua-GT">
+        <img src="./img/icons/Logo.png" alt="Aqua-GT" width="120" height="40" />
+      </a>
+
+      <nav aria-label="Navegación principal">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-haspopup="true">Menú</button>
+        <ul id="menu" class="menu">
+          <li><a href="./index.html#hero">Inicio</a></li>
+          <li><a href="./Tienda.html" aria-current="page">Peces</a></li>
+          <li><a href="Plantas.html">Plantas</a></li>
+          <li><a href="./index.html#contacto">Contacto</a></li>
+        </ul>
+
+        <!-- Icono de carrito con contador -->
+        <a class="cart-link" href="./carrito.html" aria-label="Ver carrito">
+          <svg class="cart-icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M7 4h-2l-1 2v2h2l2.6 7h8.6l2.2-6h-11.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="10" cy="20" r="1.6" fill="currentColor"/>
+            <circle cx="17" cy="20" r="1.6" fill="currentColor"/>
+          </svg>
+          <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- TIENDA -->
+  <main>
+    <section id="tienda" aria-labelledby="titulo-tienda">
+      <div class="container">
+        <h1 id="titulo-tienda">Peces</h1>
+        <p>Elige tus productos y agrégalos al carrito. Luego revisa tu pedido y envíalo por WhatsApp.</p>
+
+        <!-- Toolbar filtros / ordenar / por página -->
+        <div class="tienda-toolbar" role="region" aria-label="Filtros y ordenar">
+          <form id="filtros-tienda" class="filtros">
+            <div class="filtro">
+              <label for="f-buscar">Buscar</label>
+              <input type="search" id="f-buscar" placeholder="Nombre del producto">
+            </div>
+
+            <div class="filtro precio">
+              <label>Precio</label>
+              <input type="number" id="f-min" min="0" placeholder="Mín">
+              <span>-</span>
+              <input type="number" id="f-max" min="0" placeholder="Máx">
+            </div>
+
+            <div class="filtro">
+              <label for="f-orden">Ordenar</label>
+              <select id="f-orden">
+                <option value="relevancia">Relevancia</option>
+                <option value="precio-asc">Precio: menor a mayor</option>
+                <option value="precio-desc">Precio: mayor a menor</option>
+                <option value="nombre-asc">Nombre A-Z</option>
+                <option value="nombre-desc">Nombre Z-A</option>
+              </select>
+            </div>
+
+            <div class="filtro porpag">
+              <label for="f-porpagina">Por página</label>
+              <select id="f-porpagina">
+                <option value="4">4</option>
+                <option value="8" selected>8</option>
+                <option value="12">12</option>
+                <option value="24">24</option>
+              </select>
+            </div>
+
+            <div class="filtro acciones">
+              <button type="reset" class="btn btn--outline btn--sm">Limpiar</button>
+            </div>
+          </form>
+
+          <div class="tienda-meta">
+            <span id="res-range">0-0</span> de <span id="res-total">0</span> productos
+          </div>
+        </div>
+
+        <!-- Grid de productos -->
+        <div class="grid-tienda">
+          <!-- Producto 1 -->
+           <article class="card-prod"
+  data-id="p1"
+  data-nombre="Guppy Nacional (x3)"
+  data-precio="10"
+  data-img="./img/peces/guppy.jpeg"
+  data-g2="./img/peces/guppy_2.jpg"
+  data-g3="./img/peces/guppy_3.jpg"
+
+  data-vida="2–3 años"
+  data-temp="22 °C – 28 °C"
+  data-ph="6.5 – 7.5"
+  data-alimentacion="Omnívoro (escamas, gránulos, alimento vivo)"
+  data-repro="Ovovivíparo (20–60 crías por parto)"
+  data-compat="Pacífico; ideal con peces comunitarios"
+>
+  <img src="./img/peces/guppy.jpeg" alt="Guppy Nacional (x3)" loading="lazy" width="400" height="300">
+
+  <div class="info">
+    <h3 class="titulo">Guppy Nacional (3 unidades)</h3>
+    <p class="detalle">Muy resistentes y fáciles de cuidar, ideales para principiantes.</p>
+    <p class="precio">Q10.00</p>
+
+    <div class="actions" style="display:flex; gap:.5rem; justify-content:flex-end;">
+      <button class="btn btn--sm btn--outline btn-detalles" type="button">Ver detalles</button>
+      <button class="btn btn--sm btn-add-cart" type="button">Agregar al carrito</button>
+    </div>
+  </div>
+</article>
+
+
+
+
+          <!-- Producto 2 -->
+          <article class="card-prod"
+            data-id="p2"
+            data-nombre="Platy (x3)"
+            data-precio="10"
+            data-img="./img/peces/platy.jpeg" 
+            data-g2="./img/peces/platy_2.jpg"
+            data-g3="./img/peces/platy_3.webp"
+            data-desc="Fáciles y coloridos. Perfectos para comunitario.">
+            <img src="./img/peces/platy.jpeg" alt="Platy (x3) " loading="lazy" width="400" height="300">
+            <div class="info">
+              <h3 class="titulo">Platy (3 unidades)</h3>
+              <p class="detalle">Fáciles y coloridos. Perfectos para comunitario.</p>
+              <p class="precio">Q10.00</p>
+              <div class="actions" style="display:flex; gap:.5rem; justify-content:flex-end;">
+                <button class="btn btn--sm btn--outline btn-detalles" type="button">Ver detalles</button>
+                <button class="btn btn--sm btn-add-cart" type="button">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Producto 3 -->
+          <article class="card-prod"
+            data-id="p3"
+            data-nombre="Mollys (x3)"
+            data-precio="10"
+            data-img="./img/peces/molly.jpeg"
+            data-g2="./img/peces/molly_2.jpg"
+            data-g3="./img/peces/molly_3.jpg"
+            data-desc="Activos y resistentes; aceptan dieta variada.">
+            <img src="./img/peces/molly.jpeg" alt="Mollys" loading="lazy" width="400" height="300">
+            <div class="info">
+              <h3 class="titulo">Mollys  (3 unidades)</h3>
+              <p class="detalle">Activos y resistentes; aceptan dieta variada.</p>
+              <p class="precio">Q10.00</p>
+              <div class="actions" style="display:flex; gap:.5rem; justify-content:flex-end;">
+                <button class="btn btn--sm btn--outline btn-detalles" type="button">Ver detalles</button>
+                <button class="btn btn--sm btn-add-cart" type="button">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Producto 4 -->
+          <article class="card-prod"
+            data-id="p4"
+            data-nombre="Cola de espada (x3)"
+            data-precio="10"
+            data-img="./img/peces/espada_2.jpeg "
+            data-g2="./img/peces/cola_espada_2.jpg"
+            data-g3="./img/peces/cola_espada_3.jpg"
+            data-desc="Vivos y coloridos; excelente para acuarios familiares.">
+            <!-- Sugerido: renombra el archivo sin espacios, p. ej. ./img/peces/cola-espada.png -->
+            <img src="./img/peces/espada_2.jpeg" alt="Cola de espada (x3)" loading="lazy" width="400" height="300">
+            <div class="info">
+              <h3 class="titulo">Cola de espada (3 Unidades)</h3>
+              <p class="detalle">Vivos y coloridos; excelente para acuarios familiares.</p>
+              <p class="precio">Q10.00</p>
+              <div class="actions" style="display:flex; gap:.5rem; justify-content:flex-end;">
+                <button class="btn btn--sm btn--outline btn-detalles" type="button">Ver detalles</button>
+                <button class="btn btn--sm btn-add-cart" type="button">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+                    <!-- Producto 5 -->
+          <article class="card-prod"
+            data-id="p5"
+            data-nombre="Angel Escalar"
+            data-precio="12"
+            data-img="./img/peces/angel.jpeg"
+            data-g2="./img/peces/angel_escalar_2.png"
+            data-g3="./img/peces/angel_escalar_3.jpg "
+            data-desc="Semi-pacífico; territorial en reproducción; evitar peces muy pequeños y mordedores de aletas. ">
+            <img src="./img/peces/angel.jpeg" alt="Angel Escalar" loading="lazy" width="400" height="300">
+            <div class="info">
+              <h3 class="titulo">Angel Escalar</h3>
+              <p class="detalle">Activos y resistentes; aceptan dieta variada.</p>
+              <p class="precio">Q12.00</p>
+              <div class="actions" style="display:flex; gap:.5rem; justify-content:flex-end;">
+                <button class="btn btn--sm btn--outline btn-detalles" type="button">Ver detalles</button>
+                <button class="btn btn--sm btn-add-cart" type="button">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+                 <!-- Producto 5 -->
+                    <article class="card-prod"
+            data-id="p6"
+            data-nombre="Tigre"
+            data-precio="8"
+            data-img="./img/peces/TIGRE NORMAL.jpeg"
+            data-g2="./img/peces/tigre_2.webp"
+            data-g3="./img/peces/tigre_3.jpg"
+            data-desc="Activos y resistentes; aceptan dieta variada.">
+            <img src="./img/peces/TIGRE NORMAL.jpeg" alt="TIGRE" loading="lazy" width="400" height="300">
+            <div class="info">
+              <h3 class="titulo">Tigre</h3>
+              <p class="detalle">Activos y resistentes; aceptan dieta variada.</p>
+              <p class="precio">Q8.00</p>
+              <div class="actions" style="display:flex; gap:.5rem; justify-content:flex-end;">
+                <button class="btn btn--sm btn--outline btn-detalles" type="button">Ver detalles</button>
+                <button class="btn btn--sm btn-add-cart" type="button">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+
+
+                           <!-- Producto 6 -->
+                    <article class="card-prod"
+            data-id="p7"
+            data-nombre="Tigre Transgenico"
+            data-precio="10"
+            data-img="./img/peces/tigre_transgenico.jpeg"
+            data-g2="./img/peces/tigre_trans_2.png  "
+            data-g3="./img/peces/tigre_trans_3.jpg"
+            data-desc="Activos y resistentes; aceptan dieta variada. ">
+            <img src="./img/peces/tigre_transgenico.jpeg" alt="Tigre Transgenico" loading="lazy" width="400" height="300">
+            <div class="info">
+              <h3 class="titulo">Tigre Transgenico</h3>
+              <p class="detalle">Activos y resistentes; aceptan dieta variada.</p>
+              <p class="precio">Q10.00</p>
+              <div class="actions" style="display:flex; gap:.5rem; justify-content:flex-end;">
+                <button class="btn btn--sm btn--outline btn-detalles" type="button">Ver detalles</button>
+                <button class="btn btn--sm btn-add-cart" type="button">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+
+                                     <!-- Producto 8 -->
+                    <article class="card-prod"
+            data-id="p8"
+            data-nombre="Monja Transgenico"
+            data-precio="10"
+            data-img="./img/peces/monja_transgenica.jpeg"
+            data-g2="./img/peces/monjas_trans_2.jpg"
+            data-g3="./img/peces/monjas_trans_3.jpg"
+            data-desc="Activos y resistentes; aceptan dieta variada.">
+            <img src="./img/peces/monja_transgenica.jpeg" alt="Monja Transgenico" loading="lazy" width="400" height="300">
+            <div class="info">
+              <h3 class="titulo">Monja Transgenico </h3>
+              <p class="detalle">Activos y resistentes; aceptan dieta variada.</p>
+              <p class="precio">Q10.00</p>
+              <div class="actions" style="display:flex; gap:.5rem; justify-content:flex-end;">
+                <button class="btn btn--sm btn--outline btn-detalles" type="button">Ver detalles</button>
+                <button class="btn btn--sm btn-add-cart" type="button">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+
+                                               <!-- Producto 9 -->
+                    <article class="card-prod"
+            data-id="p9"
+            data-nombre="Cebra Transgenica (x3)"
+            data-precio="10"
+            data-img="./img/peces/cebra_transgenica.jpeg"
+            data-g2="./img/peces/cebra_trans_2.jpg"
+            data-g3="./img/peces/cebra_trans_3.png"
+            data-desc="Activos y resistentes; aceptan dieta variada.">
+            <img src="./img/peces/cebra_transgenica.jpeg" alt="Mollys juveniles (x3)" loading="lazy" width="400" height="300">
+            <div class="info">
+              <h3 class="titulo">Cebra Transgenico (3 Unidades)</h3>
+              <p class="detalle">Activos y resistentes; aceptan dieta variada.</p>
+              <p class="precio">Q10.00</p>
+              <div class="actions" style="display:flex; gap:.5rem; justify-content:flex-end;">
+                <button class="btn btn--sm btn--outline btn-detalles" type="button">Ver detalles</button>
+                <button class="btn btn--sm btn-add-cart" type="button">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+
+
+                                                         <!-- Producto 10 -->
+                    <article class="card-prod"
+            data-id="p10"
+            data-nombre="Calico"
+            data-precio="10"
+            data-img="./img/peces/pez_calico.jpeg"
+            data-g2="./img/peces/calico_2.webp"
+            data-g3="./img/peces/calico_3.png "
+            data-desc="Activos y resistentes; aceptan dieta variada.">
+            <img src="./img/peces/pez_calico.jpeg" alt="Dorado Calico" loading="lazy" width="400" height="300">
+            <div class="info">
+              <h3 class="titulo">Calico</h3>
+              <p class="detalle">Activos y resistentes; aceptan dieta variada.</p>
+              <p class="precio">Q10.00</p>
+              <div class="actions" style="display:flex; gap:.5rem; justify-content:flex-end;">
+                <button class="btn btn--sm btn--outline btn-detalles" type="button">Ver detalles</button>
+                <button class="btn btn--sm btn-add-cart" type="button">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+
+                                                                   <!-- Producto 11 -->
+                    <article class="card-prod"
+            data-id="p11"
+            data-nombre="Dorado"
+            data-precio="10"
+            data-img="./img/peces/pez_dorado.jpeg"
+            data-g2="./img/peces/dorado_2.jpg"
+            data-g3="./img/peces/dorado_3.jpg"
+            data-desc="Activos y resistentes; aceptan dieta variada.">
+            <img src="./img/peces/pez_dorado.jpeg" alt="Dorado" loading="lazy" width="400" height="300">
+            <div class="info">
+              <h3 class="titulo">Dorado</h3>
+              <p class="detalle">Activos y resistentes; aceptan dieta variada.</p>
+              <p class="precio">Q10.00</p>
+              <div class="actions" style="display:flex; gap:.5rem; justify-content:flex-end;">
+                <button class="btn btn--sm btn--outline btn-detalles" type="button">Ver detalles</button>
+                <button class="btn btn--sm btn-add-cart" type="button">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+             <!-- Producto 11 -->
+          <article class="card-prod"
+            data-id="p12"
+            data-nombre="Shubunkin"
+            data-precio="10"
+            data-img="./img/peces/pez_shubunky.jpeg"
+            data-g2="./img/peces/Shubunkin_2.png  "
+            data-g3="./img/peces/Shubunkin_3.webp"
+            data-desc="Activos y resistentes; aceptan dieta variada.">
+            <img src="./img/peces/pez_shubunky.jpeg" alt="Shubunkin" loading="lazy" width="400" height="300">
+            <div class="info">
+              <h3 class="titulo">Shubunkin</h3>
+              <p class="detalle">Activos y resistentes; aceptan dieta variada.</p>
+              <p class="precio">Q10.00</p>
+              <div class="actions" style="display:flex; gap:.5rem; justify-content:flex-end;">
+                <button class="btn btn--sm btn--outline btn-detalles" type="button">Ver detalles</button>
+                <button class="btn btn--sm btn-add-cart" type="button">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+
+                      <!-- Producto 11 -->
+          <article class="card-prod"
+            data-id="p13"
+            data-nombre="Koi"
+            data-precio="10"
+            data-img="./img/peces/koi_1.JPG"  
+            data-g2="./img/peces/koi_2.JPG"
+            data-g3="./img/peces/koi_3.JPG"
+            data-desc="Activos y resistentes; aceptan dieta variada.">
+            <img src="./img/peces/koi_1.JPG" alt="Koi" loading="lazy" width="400" height="300">
+            <div class="info">
+              <h3 class="titulo">Koi</h3>
+              <p class="detalle">Activos y resistentes; aceptan dieta variada.</p>
+              <p class="precio">Q10.00</p>
+              <div class="actions" style="display:flex; gap:.5rem; justify-content:flex-end;">
+                <button class="btn btn--sm btn--outline btn-detalles" type="button">Ver detalles</button>
+                <button class="btn btn--sm btn-add-cart" type="button">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+
+                    <article class="card-prod"
+            data-id="p14"
+            data-nombre="Cometa"
+            data-precio="10"
+            data-img="./img/peces/cometa_1.JPG"  
+            data-g2="./img/peces/cometa_2.webp  "
+            data-g3="./img/peces/cometa_3.jpg"
+            data-desc="Activos y resistentes; aceptan dieta variada.">
+            <img src="./img/peces/cometa_1.jpg" alt="Cometa" loading="lazy" width="400" height="300">
+            <div class="info">
+              <h3 class="titulo">Cometa</h3>
+              <p class="detalle">Activos y resistentes; aceptan dieta variada.</p>
+              <p class="precio">Q10.00</p>
+              <div class="actions" style="display:flex; gap:.5rem; justify-content:flex-end;">
+                <button class="btn btn--sm btn--outline btn-detalles" type="button">Ver detalles</button>
+                <button class="btn btn--sm btn-add-cart" type="button">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+                    <article class="card-prod"
+            data-id="p15"
+            data-nombre="Moro Telescopio"
+            data-precio="10"
+            data-img="./img/peces/Moro_telescopio_3.JPG"
+            data-g2="./img/peces/Moro_telescopio_2.JPG"
+            data-g3="./img/peces/Moro_telescopio_1.JPG"
+            data-desc="Activos y resistentes; aceptan dieta variada.">
+            <img src="./img/peces/Moro_telescopio_3.JPG" alt="Moro Telescopio" loading="lazy" width="400" height="300">
+            <div class="info">
+              <h3 class="titulo">Moro Telescopio</h3>
+              <p class="detalle">Activos y resistentes; aceptan dieta variada.</p>
+              <p class="precio">Q10.00</p>
+              <div class="actions" style="display:flex; gap:.5rem; justify-content:flex-end;">
+                <button class="btn btn--sm btn--outline btn-detalles" type="button">Ver detalles</button>
+                <button class="btn btn--sm btn-add-cart" type="button">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+
+                              <article class="card-prod"
+            data-id="p16"
+            data-nombre="Ciclido Convicto"
+            data-precio="15"
+            data-img="./img/peces/Ciclido_convicto.jpeg"
+            data-g2="./img/peces/convicto_2.jpg"
+            data-g3="./img/peces/convicto_3.jpg"
+            data-desc="Activos y resistentes; aceptan dieta variada.">
+            <img src="./img/peces/Ciclido_convicto.jpeg" alt="Ciclido Convicto" loading="lazy" width="400" height="300">
+            <div class="info">
+              <h3 class="titulo">Ciclido Convicto</h3>
+              <p class="detalle">Activos y resistentes; aceptan dieta variada.</p>
+              <p class="precio">Q15.00</p>
+              <div class="actions" style="display:flex; gap:.5rem; justify-content:flex-end;">
+                <button class="btn btn--sm btn--outline btn-detalles" type="button">Ver detalles</button>
+                <button class="btn btn--sm btn-add-cart" type="button">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+
+
+          
+                              <article class="card-prod"
+            data-id="p17"
+            data-nombre="Ciclido Polar Blue"
+            data-precio="15"
+            data-img="./img/peces/polar_blue_1.webp"
+            data-g2="./img/peces/polar_2.webp"
+            data-g3="./img/peces/polar_3.jpg"
+            data-desc="Activos y resistentes; aceptan dieta variada. ">
+            <img src="./img/peces/polar_blue_1.webp" alt="Ciclido Polar Blue" loading="lazy" width="400" height="300">
+            <div class="info">
+              <h3 class="titulo">Ciclido Polar Blue</h3>
+              <p class="detalle">Activos y resistentes; aceptan dieta variada.</p>
+              <p class="precio">Q15.00</p>
+              <div class="actions" style="display:flex; gap:.5rem; justify-content:flex-end;">
+                <button class="btn btn--sm btn--outline btn-detalles" type="button">Ver detalles</button>
+                <button class="btn btn--sm btn-add-cart" type="button">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+                  
+                              <article class="card-prod"
+            data-id="p18"
+            data-nombre="Caracol Manzana (x3)"
+            data-precio="10"
+            data-img="./img/peces/Caracol_manzana_1.jpg"
+            data-g2="./img/peces/caracol_2.webp"
+            data-g3="./img/peces/caracol_3.jpg  "
+            data-desc="Activos y resistentes; aceptan dieta variada. ">
+            <img src="./img/peces/Caracol_manzana_1.jpg" alt="Caracol Manzana" loading="lazy" width="400" height="300">
+            <div class="info">
+              <h3 class="titulo">Caracol Manzana (3 unidades)</h3>
+              <p class="detalle">Activos y resistentes; aceptan dieta variada.</p>
+              <p class="precio">Q10.00</p>
+              <div class="actions" style="display:flex; gap:.5rem; justify-content:flex-end;">
+                <button class="btn btn--sm btn--outline btn-detalles" type="button">Ver detalles</button>
+                <button class="btn btn--sm btn-add-cart" type="button">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+
+
+        </div>
+
+
+
+        <!-- Paginación -->
+        <nav class="paginacion" id="paginacion" aria-label="Paginación de productos"></nav>
+
+        <div class="tienda-actions">
+          <a class="btn" href="./carrito.html">Ir al carrito</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========= Modal Detalle de Producto (ÚNICO) ========= -->
+  <div class="modal-prod-backdrop" id="prod-backdrop" hidden></div>
+
+  <aside class="modal-prod" id="prod-modal" role="dialog" aria-modal="true" aria-labelledby="prod-titulo" hidden>
+    <button class="modal-prod-close" type="button" aria-label="Cerrar">&times;</button>
+
+    <div class="modal-prod-body">
+      <div class="modal-prod-gallery">
+        <img id="prod-img-main" src="" alt="" width="800" height="600" loading="eager">
+        <div class="modal-prod-thumbs" id="prod-thumbs"><!-- Miniaturas por JS --></div>
+      </div>
+
+      <div class="modal-prod-info">
+        <h3 id="prod-titulo">Título del producto</h3>
+        <p id="prod-price" class="prod-price">Q0.00</p>
+        <p id="prod-desc" class="prod-desc">Descripción del producto.</p>
+
+        <div class="prod-actions">
+          <div class="qty">
+            <button type="button" id="qty-dec" title="Disminuir">-</button>
+            <input type="text" id="qty-input" value="1" inputmode="numeric" aria-label="Cantidad">
+            <button type="button" id="qty-inc" title="Aumentar">+</button>
+          </div>
+          <button class="btn" id="prod-add">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="container">
+      <p>&copy; <span id="anio"></span> Aqua-GT · Guatemala · Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script src="./js/main.js" defer></script>
+</body>
+</html>

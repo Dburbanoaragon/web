@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carrito | Aqua-GT</title>
+  <meta name="description" content="Revisa tu carrito de Aqua-GT y envía tu pedido por WhatsApp." />
+  <link rel="icon" href="./img/icons/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="./css/styles.css" />
+
+  <!-- Estilos mínimos del carrito (aislados) -->
+  <style>
+    .cart-wrap{display:grid;grid-template-columns:1.6fr .9fr;gap:1rem}
+    @media (max-width: 900px){.cart-wrap{grid-template-columns:1fr}}
+    .cart-list{background:#fff;border-radius:16px;box-shadow:var(--shadow-sm,0 6px 20px rgba(10,46,61,.08));padding:.75rem}
+    .cart-item{display:grid;grid-template-columns:86px 1fr 110px 150px 120px 92px;gap:.6rem;align-items:center;border-bottom:1px solid #e7eef2;padding:.6rem .3rem}
+    .cart-item:last-child{border-bottom:0}
+    .cart-item img{width:86px;height:64px;object-fit:cover;border-radius:10px;background:#eef3f7}
+    .cart-nombre{font-weight:700;color:#08324a}
+    .cart-precio,.cart-subtotal{font-weight:800;color:#0a6c55}
+    .qty{display:inline-flex;align-items:center;gap:.4rem;border:1px solid #dae6ee;border-radius:10px;padding:.25rem .35rem}
+    .qty button{width:30px;height:30px;border:0;background:#eef6fb;border-radius:8px;cursor:pointer;font-weight:800}
+    .qty input{width:46px;text-align:center;border:0;background:transparent;font-weight:800}
+
+    .cart-summary{background:#fff;border-radius:16px;box-shadow:var(--shadow-sm,0 6px 20px rgba(10,46,61,.08));padding:1rem;height:max-content;position:sticky;top:1rem}
+    .cart-summary h2{margin:.2rem 0 .6rem}
+    .cart-summary .g{display:flex;flex-direction:column;gap:.35rem;margin:.5rem 0}
+    .cart-summary input,.cart-summary select,.cart-summary textarea{border:1px solid #dae6ee;border-radius:12px;padding:.55rem}
+    .total-line{display:flex;justify-content:space-between;align-items:center;font-weight:900;color:#0a6c55;font-size:1.1rem;margin:.4rem 0 .8rem}
+    .cart-summary textarea{width:100%;min-height:110px;resize:vertical}
+
+    .cart-summary .actions{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.8rem}
+    .btn{display:inline-grid;place-items:center;padding:.65rem 1rem;border-radius:12px;border:0;background:#0e607c;color:#fff;font-weight:800;cursor:pointer}
+    .btn--outline{background:transparent;border:2px solid #0e607c;color:#0e607c}
+    .btn--muted{background:#eef6fb;color:#0e607c}
+    .cart-top-actions{display:flex;gap:.6rem;margin:.6rem 0 1rem;flex-wrap:wrap}
+
+    @media (max-width:860px){
+      .cart-item{grid-template-columns:86px 1fr 90px 1fr 110px 80px}
+    }
+    @media (max-width:620px){
+      .cart-item{grid-template-columns:86px 1fr;grid-template-areas:
+        "img nombre"
+        "img precio"
+        "img qty"
+        "img subtotal"
+        "img del";
+        row-gap:.25rem}
+      .cart-item img{grid-area:img}
+      .cart-nombre{grid-area:nombre}
+      .cart-precio{grid-area:precio}
+      .cart-qty{grid-area:qty}
+      .cart-subtotal{grid-area:subtotal}
+      .cart-del{grid-area:del}
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header id="inicio" role="banner">
+    <div class="container">
+      <a href="./index.html" class="logo" aria-label="Ir al inicio Aqua-GT">
+        <img src="./img/icons/Logo.png" alt="Aqua-GT" width="120" height="40" />
+      </a>
+
+      <nav aria-label="Navegación principal">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-haspopup="true">Menú</button>
+        <ul id="menu" class="menu">
+          <li><a href="./index.html#hero">Inicio</a></li>
+          <li><a href="./Tienda.html">Peces</a></li>
+          <li><a href="Plantas.html">Plantas</a></li>
+          <li><a href="./index.html#contacto">Contacto</a></li>
+        </ul>
+
+        <!-- Icono de carrito con contador -->
+        <a class="cart-link" href="./carrito.html" aria-label="Ver carrito">
+          <svg class="cart-icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M7 4h-2l-1 2v2h2l2.6 7h8.6l2.2-6h-11.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="10" cy="20" r="1.6" fill="currentColor"/>
+            <circle cx="17" cy="20" r="1.6" fill="currentColor"/>
+          </svg>
+          <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CARRITO -->
+  <main>
+    <section id="carrito" aria-labelledby="titulo-carrito">
+      <div class="container">
+        <h1 id="titulo-carrito">Carrito</h1>
+        <div class="cart-top-actions">
+          
+          
+        </div>
+
+        <div class="cart-wrap">
+          <!-- Lista -->
+          <div id="cart-list" class="cart-list">
+            <!-- Se llena por JS (main.js). Estado vacío ya lo maneja el JS -->
+          </div>
+
+          <!-- Resumen -->
+          <aside class="cart-summary" aria-labelledby="cart-resumen">
+            <h2 id="cart-resumen">Resumen</h2>
+
+            <div class="total-line">
+              <span>Total</span>
+              <span id="cart-total">Q0.00</span>
+            </div>
+
+            <!-- ===== Datos mínimos para el pedido ===== -->
+            <form id="order-form" class="order-form" novalidate>
+              <h2 style="margin-top:.2rem">Datos para tu pedido</h2>
+
+              <div class="g">
+                <label for="order-name"><strong>Nombre completo*</strong></label>
+                <input id="order-name" type="text" placeholder="Ej.: María López" required>
+              </div>
+
+              <div class="g">
+                <label for="order-area"><strong>Ubicación*</strong></label>
+                <select id="order-area" required>
+                  <option value="" disabled selected>Selecciona</option>
+                  <option value="Ciudad de Guatemala">Ciudad de Guatemala</option>
+                  <option value="Departamento">Departamento (interior)</option>
+                </select>
+              </div>
+
+              <div class="g">
+                <label for="order-address"><strong>Dirección completa*</strong></label>
+                <textarea id="order-address" placeholder="Calle, zona/colonia, municipio y depto si aplica..." rows="2" required></textarea>
+              </div>
+            </form>
+
+            <!-- Notas del pedido -->
+            <label for="cart-notes"><strong>Notas (opcional)</strong></label>
+            <textarea id="cart-notes" placeholder="Ej.: Entregar por la tarde, referencias..."></textarea>
+
+            <!-- Acciones -->
+            <div class="actions">
+              
+              <button id="btn-whatsapp" class="btn" type="button">Enviar por WhatsApp</button>
+              <button id="btn-vaciar" class="btn btn--outline" type="button">Vaciar carrito</button>
+            </div>
+
+            <p style="margin-top:.6rem;color:#436478;font-size:.92rem">
+              <strong>Importante:</strong> Tu pedido está <strong>sujeto a disponibilidad de stock</strong> y a <strong>confirmación por un asesor</strong>.
+            </p>
+            <p style="margin-top:.2rem;color:#436478;font-size:.92rem">
+              Enviaremos tu pedido al <strong>+502 4228-5137</strong> (Para confirmación de pedido).
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="container">
+      <p>&copy; <span id="anio"></span> Aqua-GT · Guatemala · Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script src="./js/main.js" defer></script>
+
+  <!-- Handler simple para WhatsApp: Nombre + Ubicación + Dirección -->
+ <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const CART_KEY = 'carritoAGT';
+    const oldBtn = document.getElementById('btn-whatsapp');
+    if (!oldBtn) return;
+
+    // Clonamos el botón para remover cualquier listener anterior
+    const btn = oldBtn.cloneNode(true);
+    oldBtn.parentNode.replaceChild(btn, oldBtn);
+
+    // Helpers
+    const getCart = () => {
+      try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; }
+      catch { return []; }
+    };
+    const formatQ = (n) => 'Q' + Number(n).toFixed(2);
+
+    // Limpieza de carrito + UI
+    function clearCartAndUI() {
+      // 1) Vaciar storage
+      localStorage.setItem(CART_KEY, '[]');
+
+      // 2) Avisar a cualquier script que escuche (main.js re-renderiza con "cart:updated")
+      try { window.dispatchEvent(new CustomEvent('cart:updated')); } catch {}
+
+      // 3) Fallback por si no existe ese listener:
+      const list = document.getElementById('cart-list');
+      const totalEl = document.getElementById('cart-total');
+      if (list) list.innerHTML = '<p>No hay productos en el carrito.</p>';
+      if (totalEl) totalEl.textContent = 'Q0.00';
+
+      const countEl = document.getElementById('cart-count');
+      if (countEl) { countEl.textContent = '0'; countEl.style.display = 'none'; }
+
+      // 4) (opcional) Limpia campos del formulario y notas
+      document.getElementById('order-form')?.reset();
+      const notes = document.getElementById('cart-notes');
+      if (notes) notes.value = '';
+    }
+
+    btn.addEventListener('click', () => {
+      const cart = getCart();
+      if (!cart.length) { alert('Tu carrito está vacío.'); return; }
+
+      const name = (document.getElementById('order-name')?.value || '').trim();
+      const area = (document.getElementById('order-area')?.value || '');
+      const addr = (document.getElementById('order-address')?.value || '').trim();
+      const notes = (document.getElementById('cart-notes')?.value || '').trim();
+
+      if (!name)  { alert('Por favor ingresa tu nombre.'); return; }
+      if (!area)  { alert('Selecciona tu ubicación.'); return; }
+      if (!addr)  { alert('Por favor ingresa tu dirección.'); return; }
+
+      const lineas = cart.map(p => `• ${p.qty} x ${p.nombre} @ ${formatQ(p.precio)} = ${formatQ(p.precio * p.qty)}`);
+      const total  = cart.reduce((acc, p) => acc + (Number(p.precio)||0) * (Number(p.qty)||0), 0);
+
+      const mensaje = [
+        '🧾 *Pedido Aqua-GT*',
+        `*Cliente:* ${name}`,
+        `*Ubicación:* ${area}`,
+        `*Dirección:* ${addr}`,
+        '',
+        '*Productos:*',
+        ...lineas,
+        `*Total:* ${formatQ(total)}`,
+        notes ? `\n*Notas:* ${notes}` : '',
+        '\n*Importante:* Pedido *sujeto a disponibilidad de stock* y *confirmación por un asesor*.'
+      ].filter(Boolean).join('\n');
+
+      // 👉 Cambia este número si lo necesitas
+      const numero = '50242285137';
+      const url = 'https://wa.me/' + numero + '?text=' + encodeURIComponent(mensaje);
+
+      // Abrimos WhatsApp y luego limpiamos
+      window.open(url, '_blank');
+
+      // Limpieza inmediata del carrito
+      clearCartAndUI();
+    });
+  });
+</script>
